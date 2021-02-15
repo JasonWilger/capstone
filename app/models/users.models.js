@@ -1,8 +1,3 @@
-
-
-// UPDATE TUTORIALS AND tutorial & tutorials WITH ACTUAL DATA NAME  
-
-
 module.exports = (sequelize, Sequelize) => {
     const User = sequelize.define("item", {
       title: {

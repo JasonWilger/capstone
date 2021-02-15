@@ -17,6 +17,7 @@
     "pgtools": "^0.3.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",
     "sequelize": "^6.5.0",
     "web-vitals": "^1.1.0"
@@ -26,12 +27,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "db:create": "createdb the-pantry-db",
+    "db:create": "createdb the-pantry",
     "db:destroy": "dropdb the-pantry-db",
-    "db:init": "psql -f schema.sql the-pantry-db",
-    "db:seed": "psql -f seed.sql the-pantry-db",
+    "db:init": "psql -f schema.sql the-pantry",
+    "db:seed": "psql -f seed.sql the-pantry",
     "db:reset": "npm run db:destroy; npm run db:create && npm run db:init && npm run db:seed"
   },
+  
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -52,7 +54,6 @@
   },
   "description": ">This is the final full stack project for DigitalCrafts Coding Bootcamp.",
   "main": "server.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JasonWilger/capstone.git"
