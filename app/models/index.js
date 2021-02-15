@@ -1,8 +1,3 @@
-
-
-// UPDATE TUTORIALS AND tutorial & tutorials WITH ACTUAL DATA NAME  
-
-
 const dbConfig = require("../config/db.config.js");
 
 const Sequelize = require("sequelize");
@@ -24,6 +19,6 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
+db.tutorials = require("./users.models")(sequelize, Sequelize);
 
 module.exports = db;

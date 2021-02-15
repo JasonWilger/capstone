@@ -1,10 +1,5 @@
-
-
-// UPDATE TUTORIALS AND tutorial & tutorials WITH ACTUAL DATA NAME  
-
-
 const db = require("../models");
-const Items = db.item;
+const Users = db.item;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Tutorial
