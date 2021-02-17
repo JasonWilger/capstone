@@ -1,18 +1,19 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 9000;
+const cors = require("cors");
 
 
 const app = express();
-// app.use(...);
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 const db = require("./app/models");
-db.sequelize.sync();
-
-// In development, you may need to drop existing tables and re-sync database. Just use force: true as following code:
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync({ force: false }).then(() => {
     console.log("Drop and re-sync db.");
   });
+
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());

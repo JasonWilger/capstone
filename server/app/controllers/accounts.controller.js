@@ -1,5 +1,5 @@
 const db = require("../models");
-const Users = db.item;
+const Users = db.user;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Tutorial

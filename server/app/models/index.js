@@ -12,6 +12,7 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     acquire: dbConfig.pool.acquire,
     idle: dbConfig.pool.idle
   }
+  
 });
 
 const db = {};
@@ -19,6 +20,6 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.tutorials = require("./users.models")(sequelize, Sequelize);
+db.tutorials = require("./account.models")(sequelize, Sequelize);
 
 module.exports = db;

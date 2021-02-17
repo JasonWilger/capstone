@@ -1,5 +1,5 @@
 {
-  "name": "the-pantry",
+  "name": "the_pantry",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -27,13 +27,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "db:create": "createdb the-pantry",
-    "db:destroy": "dropdb the-pantry-db",
-    "db:init": "psql -f schema.sql the-pantry",
-    "db:seed": "psql -f seed.sql the-pantry",
+    "db:create": "createdb the_pantry",
+    "db:destroy": "dropdb the_pantry",
+    "db:init": "psql -f schema.sql the_pantry",
+    "db:seed": "psql -f seed.sql the_pantry",
     "db:reset": "npm run db:destroy; npm run db:create && npm run db:init && npm run db:seed"
   },
-  
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -64,5 +63,5 @@
   "bugs": {
     "url": "https://github.com/JasonWilger/capstone/issues"
   },
-  "homepage": "https://github.com/JasonWilger/capstone#readme"
+  "homepage": "."
 }
