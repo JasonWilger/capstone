@@ -5,10 +5,12 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 // pages
 import Home from './views/home';
 import Analytics from './views/analytics';
+import Login from './views/login';
 
 // components
 import NavBar from './components/navbar';
 import Footer from './components/footer';
+
 
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/analytics" component={Analytics} />
+            <Route exact path="/login" component={Login} />
             <Route path="*">
               <Redirect to='/' />
             </Route>

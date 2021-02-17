@@ -7,13 +7,13 @@ const NavBar = () => {
 
   return (
 
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Brand href="#home">The Pantry</Navbar.Brand>
+    <Navbar collapseOnSelect id="navBody" expand="lg">
+      <Link id="logo" to="/">The Pantry</Link>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
+      <Navbar.Collapse id="responsive-navbar-nav" id="navItems" className="justify-content-end">
         <Nav>
-          <Link to="/">Home</Link>
-          <Link to="/analytics">Analytics</Link>
+          <Link id="home" to="/">Home</Link>
+          <Link id="analytics" to="/analytics">Analytics</Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

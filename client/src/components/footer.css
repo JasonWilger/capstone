@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+
+#footerBody {
+    border-top: 3px solid #CBE896;
+    border-radius: 10%;
+}
+
+#item1 {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Comfortaa', cursive;
+}
+
+#item2 {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Comfortaa', cursive;
+}
+
+#item3 {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Comfortaa', cursive;
+}
