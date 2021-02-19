@@ -1,0 +1,50 @@
+
+
+
+
+#loginBody {
+    display: flex;
+    flex-direction: column;
+}
+
+#loginTitle {
+    display: flex;
+    font-size: 100px;
+    justify-content: center;
+
+}
+
+#split {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+#appDisc {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    padding: 5%;
+}
+
+#promptUser {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    padding: 5%;
+
+}
+
+#chartInfo {
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+}
+
+#pageTail {
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+}
+

@@ -1,13 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 #navBody {
-    border-bottom: 3px solid #CBE896;
+    border-bottom: 3px solid #9FE2BF;
     border-radius: 10%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+
+}
+
+.logoContent {
+    display: flex;
+    align-items: baseline;
 }
 
 #logo {
     color: black;
-    margin-left: 10%;
+    margin-left: 5%;
     font-family: 'Comfortaa', cursive;
     font-size: 35px;
     text-decoration: none;
@@ -16,9 +24,11 @@
 #navItems {
     margin-right: 10%;
     font-family: 'Comfortaa', cursive;
+    display: flex;
+    align-items: baseline;
 }
 
-#home {
+#dock {
     color: black;
     padding-right: 10%;
     text-decoration: none;
@@ -29,4 +39,11 @@
     color: black;
     text-decoration: none;
     font-size: 20px;
+    padding-right: 10%;
+
+}
+
+#addButton {
+    font-family: 'Comfortaa', cursive;
+    font-size: larger;
 }
