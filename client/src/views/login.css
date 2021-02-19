@@ -11,6 +11,7 @@
     display: flex;
     font-size: 100px;
     justify-content: center;
+    padding: 5%;
 
 }
 
@@ -18,7 +19,8 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-
+    border-top: 1px solid #9FE2BF;
+    border-bottom: 1px solid #9FE2BF;
 }
 
 #appDisc {
@@ -45,6 +47,18 @@
 #pageTail {
     display: flex;
     justify-content: center;
+    padding: 5%;
+}
+
+#noAcc {
+    margin-left: 8%;
+    padding-top: 8%;
+    outline: none;
+    box-shadow: none !important;
+    -webkit-appearance: none;
+}
+
+#signupForm {
     padding: 5%;
 }
 
