@@ -1,5 +1,5 @@
 const db = require("../models");
-const Users = db.user;
+const listItems = db.listItems;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new User

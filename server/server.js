@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 const db = require("./app/models");
-db.sequelize.sync({ force: false }).then(() => {
+db.sequelize.sync({ force: true }).then(() => {
   console.log("Drop and re-sync db.");
 });
 
@@ -25,6 +25,31 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   res.status(200).send("Welcome to The Pantry's backend!");
 });
+
+app.get("/users", (req, res) => {
+  res.status(200).send("Welcome to Users!");
+});
+
+app.get("/lists", (req, res) => {
+  res.status(200).send("Welcome to Lists!");
+});
+
+app.get("/listItems", (req, res) => {
+  res.status(200).send("Welcome to List Items!");
+});
+//end simple route
+
+
+// connecting routes
+const usersRouter = require("./app/routes/users");
+app.use("/users", usersRouter);
+
+const listsRouter = require("./app/routes/lists");
+app.use("/lists", listsRouter);
+
+const listItemsRouter = require("./app/routes/listItems");
+app.use("/listItems", listItemsRouter);
+// end connecting routes
 
 
 // set port, listen for requests
