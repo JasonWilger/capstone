@@ -7,19 +7,11 @@ import Dock from './views/dock';
 import Analytics from './views/analytics';
 import Login from './views/login';
 
-// components
-import NavBar from './components/navbar';
-import Footer from './components/footer';
-import Quick from './components/quick';
-
-
 
 function App() {
 
   return (
     <Router>
-      <NavBar />
-      <Quick />
         <main>
           <Switch>
             <Route exact path="/" component={Dock} />
@@ -30,7 +22,6 @@ function App() {
             </Route>
           </Switch>
           </main>
-        <Footer />
     </Router>
   );
 

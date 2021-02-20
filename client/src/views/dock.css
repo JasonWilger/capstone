@@ -36,8 +36,8 @@
 }
 
 .chartMain {
-    width: 1000px;
-    margin-left: 21%;
+    display: flex;
+    justify-content: center;
     padding-bottom: 5%;
 }
 

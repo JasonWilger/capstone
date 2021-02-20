@@ -5,7 +5,6 @@
     border-radius: 10%;
     padding-top: 2%;
     padding-bottom: 2%;
-
 }
 
 .logoContent {
@@ -21,10 +20,11 @@
     text-decoration: none;
 }
 
-#navItems {
-    margin-right: 10%;
+.navItems {
+    margin-right: 5%;
     font-family: 'Comfortaa', cursive;
     display: flex;
+    justify-content: flex-end;
     align-items: baseline;
 }
 
@@ -40,10 +40,11 @@
     text-decoration: none;
     font-size: 20px;
     padding-right: 10%;
-
 }
 
-#addButton {
-    font-family: 'Comfortaa', cursive;
-    font-size: larger;
+#logOut {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    padding-right: 10%;
 }

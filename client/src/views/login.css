@@ -2,46 +2,84 @@
 
 
 
-#loginBody {
+.loginBody {
     display: flex;
     flex-direction: column;
 }
 
-#loginTitle {
-    display: flex;
-    font-size: 100px;
-    justify-content: center;
-    padding: 5%;
-
+#navSignUp {
+    outline: none;
+    box-shadow: none !important;
+    -webkit-appearance: none;
 }
 
-#split {
+#loginTitle {
+    display: flex;
+    font-size: 75px;
+    justify-content: center;
+    padding: 5%;
+}
+
+#signinCard {
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.split {
     display: flex;
     flex-direction: row;
     justify-content: center;
     border-top: 1px solid #9FE2BF;
     border-bottom: 1px solid #9FE2BF;
+    background-image: url(../img/doodle.jpg);
+
 }
 
-#appDisc {
+#discTitle {
     display: flex;
     justify-content: center;
-    width: 500px;
+
+}
+
+.appDisc {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
     padding: 5%;
+}
+
+#appDisc, h2 {
+    margin-left: -5%;
 }
 
 #promptUser {
     display: flex;
     justify-content: center;
-    width: 500px;
-    padding: 5%;
-
+    width: 600px;
+    margin: 5%;
 }
 
-#chartInfo {
+.chartInfo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#chartInfo ,h2 {
     display: flex;
     justify-content: center;
     padding: 5%;
+}
+
+#chartInfo, img {
+    display: flex;
+    justify-content: center;
+    width: 60vw;
 }
 
 #pageTail {
@@ -61,4 +99,5 @@
 #signupForm {
     padding: 5%;
 }
+
 
