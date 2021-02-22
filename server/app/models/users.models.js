@@ -1,10 +1,10 @@
 module.exports = (sequelize, Sequelize) => {
 
-    const User = sequelize.define("user", {
-      UserToken: {
+    const Users = sequelize.define("user", {
+      userToken: {
         type: Sequelize.STRING
       },
-      Email: {
+      email: {
         type: Sequelize.STRING
       },
       published: {
@@ -12,6 +12,6 @@ module.exports = (sequelize, Sequelize) => {
       }
     });
   
-    return User;
+    return Users;
     
   };

@@ -57,8 +57,15 @@
     "type": "git",
     "url": "git+https://github.com/JasonWilger/capstone.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "nodejs",
+    "express",
+    "sequelize",
+    "rest",
+    "api",
+    "postgresql"
+  ],
+  "author": "Jason W.",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JasonWilger/capstone/issues"

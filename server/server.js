@@ -41,15 +41,21 @@ app.get("/listItems", (req, res) => {
 
 
 // connecting routes
-const usersRouter = require("./app/routes/users");
-app.use("/users", usersRouter);
+require("./app/routes/users")(app);
 
-const listsRouter = require("./app/routes/lists");
-app.use("/lists", listsRouter);
+// require("./app/routes/lists")(app);
 
-const listItemsRouter = require("./app/routes/listItems");
-app.use("/listItems", listItemsRouter);
-// end connecting routes
+// require("./app/routes/listItems")(app);
+
+// const usersRouter = require("./app/routes/users");
+// app.use("/users", usersRouter);
+
+// const listsRouter = require("./app/routes/lists");
+// app.use("/lists", listsRouter);
+
+// const listItemsRouter = require("./app/routes/listItems");
+// app.use("/listItems", listItemsRouter);
+// // end connecting routes
 
 
 // set port, listen for requests

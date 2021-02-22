@@ -6,16 +6,22 @@ const Op = db.Sequelize.Op;
 exports.create = (req, res) => {
 
     // Validate request
-    if (!req.body.title) {
+    if (!req.body.userToken) {
         res.status(400).send({
-        message: "Content can not be empty!"
+        message: "No user token detected!"
+        });
+        return;
+    } else if (!req.body.email) {
+      res.status(400).send({
+        message: "No email detected!"
         });
         return;
     }
 
     // Create a User
     const user = {
-        Email: req.body.Email,
+        userToken: req.body.userToken,
+        email: req.body.email,
         published: req.body.published ? req.body.published : false
     };
 
@@ -36,7 +42,9 @@ exports.create = (req, res) => {
 // Retrieve all Users from the database.
 exports.findAll = (req, res) => {
 
+    const userToken = req.body.userToken;
     const email = req.query.email;
+    var condition = userToken ? { userToken: { [Op.iLike]: `%${userToken}%` } } : null;
     var condition = email ? { email: { [Op.iLike]: `%${email}%` } } : null;
 
     User.findAll({ where: condition })
