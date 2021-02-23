@@ -22,7 +22,7 @@ const Login = () => {
   return (
 
     <div>
-      <Navbar id=""navBar bg="light" variant="light">
+      <Navbar id="navBar" bg="light" variant="light">
       <Link id="logo" to="/">
         <div className="logoContent">
           <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" className="bi bi-door-open" viewBox="0 0 16 16">
@@ -130,9 +130,18 @@ const Login = () => {
           <img src={chartImg} alt="chart image"/>
         </div>
 
-        <div className="pageTail">
-          this is the bottom of the signin page 
-        </div>
+          <div class="footer">
+            <div id="foot-info">
+              <div id="follow">
+                <h2>Follow Us</h2>
+                </div>
+              <div id="foot-links">
+                <a href="https://www.linkedin.com/in/jason-wilger/">Linkedin</a>
+                <a href="https://github.com/JasonWilger">GitHub</a>
+                <a href="https://vsco.co/wilger11/gallery">VSCO</a>
+              </div>
+            </div>
+          </div>
 
       </div>
     </div>
