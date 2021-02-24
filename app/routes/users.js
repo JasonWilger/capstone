@@ -1,15 +1,6 @@
-// const express = require("express");
-// const router = express.Router();
-
-// const models = require("../models");
-
-// router.get('/', async(req, res) => {
-//     res.send('Hello users')
-// });
-
 module.exports = app => {
 
-const users = require("../controllers/users.controller");
+const users = require("../controllers/users.controllers");
 
 var router = require("express").Router();
 
@@ -37,6 +28,4 @@ router.delete("/", users.deleteAll);
 app.use('/api/users', router);
 
 };
-
-// module.exports = router;
 

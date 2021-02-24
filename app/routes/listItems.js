@@ -1,16 +1,6 @@
-// const express = require("express");
-// const router = express.Router();
-
-
-// const models = require("../models");
-
-// router.get('/', async(req, res) => {
-//     res.send('User list items')
-// });
-
 module.exports = app => {
 
-const listItems = require("../controllers/listItems.controller");
+const listItems = require("../controllers/listItems.controllers");
 
 var router = require("express").Router();
 
@@ -38,5 +28,3 @@ router.delete("/", listItems.deleteAll);
 app.use('/api/listItems', router);
     
 };
-
-// module.exports = router;
