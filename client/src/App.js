@@ -3,9 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 // pages
+import Login from './views/login';
 import Dock from './views/dock';
 import Analytics from './views/analytics';
-import Login from './views/login';
 
 
 function App() {
@@ -14,9 +14,9 @@ function App() {
     <Router>
         <main>
           <Switch>
-            <Route exact path="/" component={Dock} />
+            <Route exact path="/" component={Login} />
+            <Route exact path="/dock" component={Dock} />
             <Route exact path="/analytics" component={Analytics} />
-            <Route exact path="/login" component={Login} />
             <Route path="*">
               <Redirect to='/' />
             </Route>

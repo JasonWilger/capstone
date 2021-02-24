@@ -21,7 +21,7 @@ const NavBar = () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
         <Nav className="navItems">
-          <Link id="dock" to="/">Dock</Link>
+          <Link id="dock" to="/dock">Dock</Link>
           <Link id="analytics" to="/analytics">Analytics</Link>
           <Nav.Link id="logOut" href="/login">Logout</Nav.Link>
         </Nav>
