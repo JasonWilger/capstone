@@ -109,19 +109,20 @@
 
 }
 
-.follow {
+.contact {
     display: flex;
     justify-content: center;
     padding: 3%;
 }
 
-#follow {
+#contact {
+    font-family: 'Comfortaa', cursive;
     color:  black;
     background-color: white;
     padding: 1%;
     border-radius: 10%;
     border: 1px solid #9FE2BF;
-    font-size: 250%;
+    font-size: 150%;
 }
 
 #foot-links {
@@ -131,9 +132,10 @@
 }
 
 #foot-links a {
+    font-family: 'Comfortaa', cursive;
     text-decoration: none;
     color:  black;
-    font-size: 200%;
+    font-size: 150%;
     background-color: white;
     padding: 1%;
     border-radius: 10%;
