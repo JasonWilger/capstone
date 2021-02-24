@@ -132,8 +132,8 @@ const Login = () => {
 
           <div class="footer">
             <div id="foot-info">
-              <div id="follow">
-                <h2>Follow Us</h2>
+              <div className="follow">
+                <div id="follow">Follow Us</div>
                 </div>
               <div id="foot-links">
                 <a href="https://www.linkedin.com/in/jason-wilger/">Linkedin</a>

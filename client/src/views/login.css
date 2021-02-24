@@ -101,13 +101,6 @@
     padding: 5%;
 }
 
-#pageTail, h2 {
-    font-family: 'Comfortaa', cursive;
-    background-color: white;
-    padding: 2%;
-    border-radius: 30%;
-}
-
 .footer {
     background-image: url(../img/food8.jpg);
     padding-top: 1%;
@@ -116,17 +109,25 @@
 
 }
 
-#follow {
+.follow {
     display: flex;
     justify-content: center;
-    padding-bottom: 5%;
+    padding: 3%;
+}
+
+#follow {
     color:  black;
+    background-color: white;
+    padding: 1%;
+    border-radius: 10%;
+    border: 1px solid #9FE2BF;
+    font-size: 250%;
 }
 
 #foot-links {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 #foot-links a {
@@ -134,7 +135,11 @@
     color:  black;
     font-size: 200%;
     background-color: white;
-    padding: 2%;
-    border-radius: 30%;
+    padding: 1%;
+    border-radius: 10%;
+    border: 1px solid #9FE2BF;
+    margin-left: 10%;
+    margin-right: 10%;
+
 }
 

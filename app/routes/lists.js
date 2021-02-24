@@ -1,21 +1,6 @@
-// const express = require("express");
-// const router = express.Router();
-
-
-// const models = require("../models");
-
-// router.get('/', async(req, res) => {
-//     res.send('User lists')
-// });
-
-// router.post('/', async(req, res) => {
-//     res.send(lists.create)
-// });
-
-
 module.exports = app => {
 
-const lists = require("../controllers/lists.controller");
+const lists = require("../controllers/lists.controllers");
 
 var router = require("express").Router();
 
@@ -43,7 +28,3 @@ router.delete("/", lists.deleteAll);
 app.use('/api/lists', router);
     
 };
-
-
-
-// module.exports = router;

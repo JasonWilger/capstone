@@ -33,7 +33,7 @@ exports.create = (req, res) => {
         .catch(err => {
         res.status(500).send({
             message:
-            err.message || "Some error occurred while creating the User."
+            err.message || "Some error occurred while creating the user."
         });
     });
 
@@ -43,9 +43,7 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
 
     const userToken = req.body.userToken;
-    const email = req.query.email;
     var condition = userToken ? { userToken: { [Op.iLike]: `%${userToken}%` } } : null;
-    var condition = email ? { email: { [Op.iLike]: `%${email}%` } } : null;
 
     User.findAll({ where: condition })
     .then(data => {
@@ -71,7 +69,7 @@ exports.findOne = (req, res) => {
       })
       .catch(err => {
         res.status(500).send({
-          message: "Error retrieving User with id=" + id
+          message: "Error retrieving user with id=" + id
         });
       });
   
@@ -92,13 +90,13 @@ exports.update = (req, res) => {
           });
         } else {
           res.send({
-            message: `Cannot update User with id=${id}. Maybe User was not found or req.body is empty!`
+            message: `Cannot update user with id=${id}. Maybe user was not found or req.body is empty!`
           });
         }
       })
       .catch(err => {
         res.status(500).send({
-          message: "Error updating User with id=" + id
+          message: "Error updating user with id=" + id
         });
       });
   
@@ -119,13 +117,13 @@ exports.delete = (req, res) => {
           });
         } else {
           res.send({
-            message: `Cannot delete User with id=${id}. Maybe User was not found!`
+            message: `Cannot delete user with id=${id}. Maybe user was not found!`
           });
         }
       })
       .catch(err => {
         res.status(500).send({
-          message: "Could not delete User with id=" + id
+          message: "Could not delete user with id=" + id
         });
       });
   
@@ -139,7 +137,7 @@ exports.deleteAll = (req, res) => {
         truncate: false
       })
         .then(nums => {
-          res.send({ message: `${nums} Users were deleted successfully!` });
+          res.send({ message: `${nums} users were deleted successfully!` });
         })
         .catch(err => {
           res.status(500).send({

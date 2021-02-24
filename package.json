@@ -27,6 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "heroku-postbuild": "cd client && npm install && npm run build",
     "db:create": "createdb the_pantry",
     "db:destroy": "dropdb the_pantry",
     "db:init": "psql -f schema.sql the_pantry",
