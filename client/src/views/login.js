@@ -5,9 +5,11 @@ import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal'
-import logIn from '../components/loginButton'
-import chartImg from '../img/line-ex.png'
+import Modal from 'react-bootstrap/Modal';
+import logIn from '../components/logIn.firebase';
+import signUp from '../components/signUp.firebase';
+import chartImg from '../img/line-ex.png';
+
 
 const Login = () => {
 
@@ -94,7 +96,7 @@ const Login = () => {
                     <Modal.Title>Sign-Up</Modal.Title>
                   </Modal.Header>
                   <div id="signupForm">
-                  <Form.Group controlId="formBasicEmail">
+                  <Form.Group controlId="signupEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" />
                     <Form.Text className="text-muted">
@@ -102,7 +104,7 @@ const Login = () => {
                     </Form.Text>
                   </Form.Group>
 
-                  <Form.Group controlId="formBasicPassword">
+                  <Form.Group controlId="signupPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" />
                   </Form.Group>
@@ -111,7 +113,7 @@ const Login = () => {
                     <Button variant="secondary" onClick={handleClose}>
                       Close
                     </Button>
-                    <Button variant="primary" onClick={() => logIn()}>
+                    <Button variant="primary" onClick={signUp}>
                       Submit
                     </Button>
                   </Modal.Footer>

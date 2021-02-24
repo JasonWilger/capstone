@@ -1,5 +1,6 @@
 import firebase from '../firebase';
 
+
 function logIn() {
     console.log('I am running')
     let emailValue = document.getElementById('formBasicEmail').value;

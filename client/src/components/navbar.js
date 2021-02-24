@@ -2,6 +2,8 @@ import './navbar.css';
 import React from 'react'
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import logOut from './logOut.firebase';
 
 
 const NavBar = () => {
@@ -23,7 +25,11 @@ const NavBar = () => {
         <Nav className="navItems">
           <Link id="dock" to="/dock">Dock</Link>
           <Link id="analytics" to="/analytics">Analytics</Link>
-          <Nav.Link id="logOut" href="/login">Logout</Nav.Link>
+          <Link id="logOut" to="/login">
+          <Button variant="primary" onClick={logOut}>
+            Logout
+          </Button>
+          </Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
