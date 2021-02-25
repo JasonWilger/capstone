@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#mainTitle {
+    display: flex;
+    justify-content: center;
+    padding-top: -2%;
+    padding-bottom: 2%;
+    font-family: 'Comfortaa', cursive;
+    font-size: larger;
+}
