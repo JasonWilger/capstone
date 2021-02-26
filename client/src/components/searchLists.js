@@ -15,7 +15,7 @@ export default class SearchLists extends Component {
         this.refreshContainer = this.refreshContainer.bind(this);
         this.setActiveList = this.setActiveList.bind(this);
         this.removeAllLists = this.removeAllLists.bind(this);
-        this.searchTitle = this.searchTitle.bind(this);
+        this.handleSearchTitle = this.handleSearchTitle.bind(this);
 
         this.state = {
             lists: [],
@@ -76,7 +76,7 @@ export default class SearchLists extends Component {
         });
     }
 
-    searchTitle() {
+    handleSearchTitle() {
         ListDataService.findByTitle(this.state.searchTitle)
         .then(response => {
             this.setState({
@@ -102,10 +102,10 @@ export default class SearchLists extends Component {
                         type="text"
                         placeholder="search by title"
                         value={searchTitle}
-                        onChange={this.onChangeSearchTitle}
+                        onChange={() => this.onChangeSearchTitle}
                         />
                         <InputGroup.Append>
-                        <Button variant="secondary" onClick={searchTitle}>Search</Button>
+                        <Button variant="secondary" onClick={() => this.handleSearchTitle}>Search</Button>
                         </InputGroup.Append>
                     </InputGroup>
 
@@ -113,10 +113,10 @@ export default class SearchLists extends Component {
                         <h2>Your current lists:</h2>
 
                         <ul className="list-group">
-                            {lists &&
-                                 lists.map((list, index) => (
+                            {lists.length > 0 &&
+                                 this.state.lists.map((list, index) => (
                                     <li className={
-                                        "list-group-item" +
+                                        "list-group-item " +
                                         (index === currentIndex ? "active" : "")
                                         }
                                         onClick={() => this.setActiveList(list, index)}
@@ -127,7 +127,7 @@ export default class SearchLists extends Component {
                             ))}
                         </ul>
 
-                        <Button variant="secondary" onClick={this.removeAllLists}>
+                        <Button variant="secondary" onClick={() => this.removeAllLists}>
                             Delete all
                         </Button>
                     </div>
@@ -157,6 +157,7 @@ export default class SearchLists extends Component {
                             </div>
                         ) : (
                             <div>
+                                <br />
                                 <p>Please select a list...</p>
                             </div>
                         )}

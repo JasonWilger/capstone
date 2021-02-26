@@ -6,14 +6,8 @@ const Op = db.Sequelize.Op;
 exports.create = (req, res) => {
 
     // Validate request
-    if (!req.body.userToken) {
+    if (!req.body.itemName) {
         res.status(400).send({
-        message: "No user token detected!"
-        });
-        return;
-
-    } else if (!req.body.itemName) {
-      res.status(400).send({
         message: "No itemName detected!"
         });
         return;
@@ -45,7 +39,6 @@ exports.create = (req, res) => {
 
     // Create a listItem
     const user = {
-        userToken: req.body.userToken,
         itemName: req.body.itemName,
         storeType: req.body.storeType,
         food: req.body.food,

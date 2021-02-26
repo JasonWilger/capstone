@@ -38,17 +38,18 @@ app.get("/lists", (req, res) => {
 app.get("/listItems", (req, res) => {
   res.status(200).send("Welcome to List Items!");
 });
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
-//end simple route
-
 
 // connecting routes
 require("./app/routes/users")(app);
 require("./app/routes/lists")(app);
 require("./app/routes/listItems")(app);
 // end connecting routes
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
+//end simple route
+
 
 // set port, listen for requests
 app.listen(PORT, () => {

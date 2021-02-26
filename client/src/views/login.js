@@ -132,7 +132,7 @@ const Login = () => {
           <img src={chartImg} alt="chart image"/>
         </div>
 
-          <div class="footer">
+          <div className="footer">
             <div id="foot-info">
               <div className="contact">
                 <div id="contact">Contact</div>

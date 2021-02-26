@@ -6,13 +6,7 @@ const Op = db.Sequelize.Op;
 exports.create = (req, res) => {
 
     // Validate request
-    if (!req.body.userToken) {
-        res.status(400).send({
-        message: "No user token detected!"
-        });
-        return;
-
-    } else if (!req.body.title) {
+    if (!req.body.title) {
         res.status(400).send({
         message: "No title detected!"
         });
@@ -27,7 +21,6 @@ exports.create = (req, res) => {
 
     // Create a List
     const lists = {
-        userToken: req.body.userToken,
         title: req.body.title,
         description: req.body.description,
         published: req.body.published ? req.body.published : false
@@ -49,6 +42,7 @@ exports.create = (req, res) => {
 
 // Retrieve all Lists from the database.
 exports.findAll = (req, res) => {
+  console.log("finding all lists");
 
     const title = req.body.title;
     var condition = title ? { title: { [Op.iLike]: `%${title}%` } } : null;
@@ -56,6 +50,7 @@ exports.findAll = (req, res) => {
     Lists.findAll({ where: condition })
     .then(data => {
         res.send(data);
+        console.log(data);
     })
     .catch(err => {
         res.status(500).send({
