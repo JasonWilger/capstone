@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ListDataService from '../services/lists.services';
+import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
@@ -102,10 +103,10 @@ export default class SearchLists extends Component {
                         type="text"
                         placeholder="search by title"
                         value={searchTitle}
-                        onChange={() => this.onChangeSearchTitle}
+                        onChange={this.onChangeSearchTitle}
                         />
                         <InputGroup.Append>
-                        <Button variant="secondary" type="submit" onClick={() => this.handleSearchTitle}>Search</Button>
+                        <Button variant="secondary" onClick={this.handleSearchTitle}>Search</Button>
                         </InputGroup.Append>
                     </InputGroup>
 
@@ -127,7 +128,7 @@ export default class SearchLists extends Component {
                             ))}
                         </ul>
 
-                        <Button variant="secondary" type="submit" onClick={() => this.removeAllLists}>
+                        <Button variant="secondary" onClick={this.removeAllLists}>
                             Delete all
                         </Button>
                     </div>
@@ -153,6 +154,12 @@ export default class SearchLists extends Component {
                                         <h4>Status:</h4>
                                     </label>{" "}
                                     {currentList.published ? "Published" : "pending"} 
+                                </div>
+                                
+                                <div>
+                                    <Link to={"/lists/" + currentList.id}>
+                                        Edit
+                                    </Link>
                                 </div>
                             </div>
                         ) : (

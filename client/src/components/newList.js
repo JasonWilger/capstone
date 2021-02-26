@@ -10,7 +10,7 @@ export default class NewList extends Component {
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.saveList = this.saveList.bind(this);
-        this.newList = this.newList.bind(this);
+        // this.newList = this.newList.bind(this);
 
         this.state = {
             controlId:null,
@@ -56,27 +56,27 @@ export default class NewList extends Component {
             console.log(e);
         });
     }
-    
-    newList() {
-        this.setState({
-            controlId: null,
-            title: "",
-            description: "",
-            published: false,
 
-            submitted: true
-        })
-    }
+    // newList() {
+    //     this.setState({
+    //         controlId: null,
+    //         title: "",
+    //         description: "",
+    //         published: false,
+
+    //         submitted: true
+    //     })
+    // }
 
     render() {
         return (
-            <div className="submitForm">
-                {this.state.submitted ? (
-                    <div>
-                        <h4>You have successfully created a new list!</h4>
-                        <Button variant="primary" type="submit" onClick={() => this.newList}>Add</Button>
-                    </div>
-                ) : (
+            // <div className="submitForm">
+            //     {this.state.submitted ? (
+            //         <div>
+            //             <h2>You have successfully created a new list!</h2>
+            //             <Button variant="primary" onClick={this.newList}>Add</Button>
+            //         </div>
+            //     ) : (
                     <div>
                         <Form className="submitList">
                             <Form.Group controlId="listTitle">
@@ -101,15 +101,14 @@ export default class NewList extends Component {
                                 />
                             </Form.Group>
 
-                            <Button onClick={() => this.saveList} variant="primary" type="submit">
+                            <Button onClick={this.saveList} variant="primary">
                             Submit
                             </Button>
 
                         </Form>
                     </div>
-                )}
-            </div>
-
+            //     )}
+            // </div>
         )
     }
 };

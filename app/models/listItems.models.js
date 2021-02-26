@@ -10,7 +10,7 @@ module.exports = (sequelize, Sequelize) => {
     storeType: {
       type: Sequelize.STRING
     },
-    food: {
+    foodGroup: {
       type: Sequelize.STRING
     },
     quantity: {

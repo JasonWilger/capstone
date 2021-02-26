@@ -7,6 +7,9 @@ import Login from './views/login';
 import Dock from './views/dock';
 import Analytics from './views/analytics';
 
+// components
+import List from './components/list.component';
+
 
 function App() {
 
@@ -17,6 +20,7 @@ function App() {
             <Route exact path="/" component={Login} />
             <Route exact path="/dock" component={Dock} />
             <Route exact path="/analytics" component={Analytics} />
+            <Route exact path="/lists/:id" component={List} />
             <Route path="*">
               <Redirect to='/' />
             </Route>

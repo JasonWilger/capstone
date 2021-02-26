@@ -18,7 +18,7 @@ exports.create = (req, res) => {
         });
         return;
 
-    } else if (!req.body.food) {
+    } else if (!req.body.foodGroup) {
         res.status(400).send({
         message: "No food detected!"
         });
@@ -41,7 +41,7 @@ exports.create = (req, res) => {
     const user = {
         itemName: req.body.itemName,
         storeType: req.body.storeType,
-        food: req.body.food,
+        foodGroup: req.body.foodGroup,
         quantity: req.body.quantity,
         description: req.body.description,
         published: req.body.published ? req.body.published : false

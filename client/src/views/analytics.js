@@ -22,7 +22,6 @@ const Analytics = () => {
           <NewList />
           <SearchLists />
         </div>
-        
       <Footer />
     </div>
     

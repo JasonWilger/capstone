@@ -1,5 +1,11 @@
 import React, { Component } from "react";
 import ListDataService from '../services/lists.services';
+import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import InputGroup from 'react-bootstrap/InputGroup';
+import FormControl from 'react-bootstrap/FormControl';
+import Form from 'react-bootstrap/Form';
+
 
 export default class List extends Component {
     constructor(props) {
@@ -66,7 +72,7 @@ export default class List extends Component {
     updatePublished(status) {
         var data = {
             id: this.state.currentList.id,
-            title: this.state.currentTitle.title,
+            title: this.state.currentList.title,
             description: this.state.currentList.description,
             published: status
         };
@@ -121,10 +127,10 @@ export default class List extends Component {
             <div>
                 {currentList ? (
                     <div className="editForm">
-                        <h2>List</h2>
+                        <h2>{"Lets make some changes to " + currentList.title + " !"}</h2>
                             <Form>
                             <InputGroup className="mb-3">
-                                <label htmlFor="title">Title</label>
+                            <Form.Label>List Title</Form.Label>
                                 <FormControl
                                 type="text"
                                 placeholder="New Title"
@@ -135,7 +141,7 @@ export default class List extends Component {
                             </InputGroup>
 
                             <InputGroup className="mb-3">
-                                <label htmlFor="description">Description</label>
+                            <Form.Label>List Description</Form.Label>
                                 <FormControl
                                 type="text"
                                 placeholder="New Description"
@@ -162,11 +168,19 @@ export default class List extends Component {
                             )}
 
                             <Button onClick={this.deleteList}>
+                            <Link to={"/analytics"}>
                                 Delete
+                            </Link>
                             </Button>
 
-                            <Button type="submit" onClick={this.updateList}>
-                                Delete
+                            <Button onClick={this.updateList}>
+                                Update
+                            </Button>
+
+                            <Button variant="primary">
+                            <Link to={"/analytics"}>
+                                Back
+                            </Link>
                             </Button>
                             <p>{this.state.message}</p>
                         </div>
