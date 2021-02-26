@@ -56,6 +56,7 @@ export default class NewList extends Component {
             console.log(e);
         });
     }
+    
     newList() {
         this.setState({
             controlId: null,
@@ -73,7 +74,7 @@ export default class NewList extends Component {
                 {this.state.submitted ? (
                     <div>
                         <h4>You have successfully created a new list!</h4>
-                        <Button variant="primary" type="submit" onClick={this.newList}>Add</Button>
+                        <Button variant="primary" type="submit" onClick={() => this.newList}>Add</Button>
                     </div>
                 ) : (
                     <div>
@@ -100,7 +101,7 @@ export default class NewList extends Component {
                                 />
                             </Form.Group>
 
-                            <Button onClick={this.saveList} variant="primary" type="submit">
+                            <Button onClick={() => this.saveList} variant="primary" type="submit">
                             Submit
                             </Button>
 

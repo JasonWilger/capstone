@@ -30,10 +30,10 @@ export default class SearchLists extends Component {
     }
 
     onChangeSearchTitle(e){
-        const searchTitle = e.target.value;
+        const handleSearchTitle = e.target.value;
 
         this.setState({
-            searchTitle: searchTitle
+            searchTitle: handleSearchTitle
         });
     }
 
@@ -105,7 +105,7 @@ export default class SearchLists extends Component {
                         onChange={() => this.onChangeSearchTitle}
                         />
                         <InputGroup.Append>
-                        <Button variant="secondary" onClick={() => this.handleSearchTitle}>Search</Button>
+                        <Button variant="secondary" type="submit" onClick={() => this.handleSearchTitle}>Search</Button>
                         </InputGroup.Append>
                     </InputGroup>
 
@@ -127,12 +127,12 @@ export default class SearchLists extends Component {
                             ))}
                         </ul>
 
-                        <Button variant="secondary" onClick={() => this.removeAllLists}>
+                        <Button variant="secondary" type="submit" onClick={() => this.removeAllLists}>
                             Delete all
                         </Button>
                     </div>
 
-                    <div className="col-md-6">
+                    <div id="displayInfo" className="col-md-6">
                         {currentList ? (
                             <div>
                                 <h2>List</h2>
