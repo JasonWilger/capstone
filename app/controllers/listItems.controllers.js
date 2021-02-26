@@ -20,7 +20,7 @@ exports.create = (req, res) => {
 
     } else if (!req.body.foodGroup) {
         res.status(400).send({
-        message: "No food detected!"
+        message: "No food group detected!"
         });
         return;
 

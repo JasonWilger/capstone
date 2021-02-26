@@ -1,4 +1,4 @@
-import './analytics.css';
+import './yourList.css';
 import React, { Component } from "react";
 
 // components
@@ -9,7 +9,7 @@ import NewList from '../components/newList';
 import SearchLists from '../components/searchLists';
 
 
-const Analytics = () => {
+const YourList = () => {
 
   return (
 
@@ -30,4 +30,4 @@ const Analytics = () => {
   
 }
 
-export default Analytics;
+export default YourList;

@@ -24,7 +24,7 @@ const NavBar = () => {
       <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
         <Nav className="navItems">
           <Link id="dock" to="/dock">Dock</Link>
-          <Link id="analytics" to="/analytics">Analytics</Link>
+          <Link id="yourList" to="/yourList">List</Link>
           <Link id="logOut" to="/login">
           <Button variant="primary" onClick={logOut}>
             Logout
