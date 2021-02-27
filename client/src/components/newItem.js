@@ -16,7 +16,7 @@ export default class NewItem extends Component {
         // this.newItem = this.newItem.bind(this);
 
         this.state = {
-            controlId:null,
+            controlId: null,
             itemName: "",
             storeType: "",
             foodGroup: "",
@@ -85,6 +85,8 @@ export default class NewItem extends Component {
         .catch(e => {
             console.log(e);
         });
+
+        window.location.reload(false);
     }
 
     // newItem() {
@@ -165,7 +167,7 @@ export default class NewItem extends Component {
                             </Form.Group>
 
                             <Button onClick={this.saveItem} variant="primary">
-                            Submit
+                                Submit
                             </Button>
 
                         </Form>

@@ -111,7 +111,7 @@ export default class SearchItems extends Component {
                     </InputGroup>
 
                     <div className="col-md-6">
-                        <h2>Your current list:</h2>
+                        <h2>Your current list items:</h2>
 
                         <ul className="list-group">
                             {items.length > 0 &&
