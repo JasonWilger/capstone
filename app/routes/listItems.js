@@ -1,30 +1,30 @@
-module.exports = app => {
+// module.exports = app => {
 
-const listItems = require("../controllers/listItems.controllers");
+// const listItems = require("../controllers/listItems.controllers");
 
-var router = require("express").Router();
+// var router = require("express").Router();
 
-// Create a new listItem
-router.post("/", listItems.create);
+// // Create a new listItem
+// router.post("/", listItems.create);
 
-// Retrieve all listItems
-router.get("/", listItems.findAll);
+// // Retrieve all listItems
+// router.get("/", listItems.findAll);
 
-// Retrieve all published listItems
-router.get("/published", listItems.findAllPublished);
+// // Retrieve all published listItems
+// router.get("/published", listItems.findAllPublished);
 
-// Retrieve a single listItem with id
-router.get("/:id", listItems.findOne);
+// // Retrieve a single listItem with id
+// router.get("/:id", listItems.findOne);
 
-// Update a listItem with id
-router.put("/:id", listItems.update);
+// // Update a listItem with id
+// router.put("/:id", listItems.update);
 
-// Delete a listItem with id
-router.delete("/:id", listItems.delete);
+// // Delete a listItem with id
+// router.delete("/:id", listItems.delete);
 
-// Create a new listItem
-router.delete("/", listItems.deleteAll);
+// // Create a new listItem
+// router.delete("/", listItems.deleteAll);
 
-app.use('/api/listItems', router);
+// app.use('/api/listItems', router);
     
-};
+// };

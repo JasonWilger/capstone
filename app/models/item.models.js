@@ -1,11 +1,20 @@
 module.exports = (sequelize, Sequelize) => {
 
-  const Lists = sequelize.define("lists", {
+  const Item = sequelize.define("items", {
     userToken: {
       type: Sequelize.STRING
     },
-    title: {
+    itemName: {
       type: Sequelize.STRING
+    },
+    storeType: {
+      type: Sequelize.STRING
+    },
+    foodGroup: {
+      type: Sequelize.STRING
+    },
+    quantity: {
+      type: Sequelize.INTEGER
     },
     description: {
       type: Sequelize.STRING
@@ -15,6 +24,6 @@ module.exports = (sequelize, Sequelize) => {
     }
   });
 
-  return Lists;
+  return Item;
     
 };

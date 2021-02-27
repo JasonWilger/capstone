@@ -32,17 +32,17 @@ app.get("/", (req, res) => {
 app.get("/users", (req, res) => {
   res.status(200).send("Welcome to Users!");
 });
-app.get("/lists", (req, res) => {
-  res.status(200).send("Welcome to Lists!");
+app.get("/items", (req, res) => {
+  res.status(200).send("Welcome to Items!");
 });
-app.get("/listItems", (req, res) => {
-  res.status(200).send("Welcome to List Items!");
-});
+// app.get("/listItems", (req, res) => {
+//   res.status(200).send("Welcome to List Items!");
+// });
 
 // connecting routes
 require("./app/routes/users")(app);
-require("./app/routes/lists")(app);
-require("./app/routes/listItems")(app);
+require("./app/routes/item")(app);
+// require("./app/routes/listItems")(app);
 // end connecting routes
 
 app.get('*', (req, res) => {

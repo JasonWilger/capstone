@@ -5,8 +5,8 @@ import React, { Component } from "react";
 import NavBar from '../components/navbar';
 import Footer from '../components/footer';
 import Quick from '../components/quick';
-import NewList from '../components/newList';
-import SearchLists from '../components/searchLists';
+import NewItem from '../components/newItem';
+import SearchItems from '../components/searchItems';
 
 
 const YourList = () => {
@@ -18,9 +18,9 @@ const YourList = () => {
       <Quick />
 
         <div id="mainContent">
-          <div id="mainTitle">Your Grocery Lists</div>
-          <NewList />
-          <SearchLists />
+          <div id="mainTitle">Your Grocery List</div>
+          <NewItem />
+          <SearchItems />
         </div>
       <Footer />
     </div>

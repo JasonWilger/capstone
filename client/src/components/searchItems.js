@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ListDataService from '../services/lists.services';
+import ItemDataService from '../services/item.services';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -8,41 +8,41 @@ import FormControl from 'react-bootstrap/FormControl';
 
 
 
-export default class SearchLists extends Component {
+export default class SearchItems extends Component {
     constructor(props) {
         super(props);
-        this.onChangeSearchTitle = this.onChangeSearchTitle.bind(this);
-        this.retrieveLists = this.retrieveLists.bind(this);
+        this.onChangeSearchItem = this.onChangeSearchItem.bind(this);
+        this.retrieveItems = this.retrieveItems.bind(this);
         this.refreshContainer = this.refreshContainer.bind(this);
-        this.setActiveList = this.setActiveList.bind(this);
-        this.removeAllLists = this.removeAllLists.bind(this);
-        this.handleSearchTitle = this.handleSearchTitle.bind(this);
+        this.setActiveItem = this.setActiveItem.bind(this);
+        this.removeAllItems = this.removeAllItems.bind(this);
+        this.handleSearchItemName = this.handleSearchItemName.bind(this);
 
         this.state = {
-            lists: [],
-            currentList: null,
+            items: [],
+            currentItem: null,
             currentIndex: -1,
-            searchTitle: ""
+            searchItem: ""
         };
     }
 
     componentDidMount() {
-        this.retrieveLists();
+        this.retrieveItems();
     }
 
-    onChangeSearchTitle(e){
-        const handleSearchTitle = e.target.value;
+    onChangeSearchItem(e){
+        const handleSearchItemName = e.target.value;
 
         this.setState({
-            searchTitle: handleSearchTitle
+            searchItem: handleSearchItemName
         });
     }
 
-    retrieveLists() {
-        ListDataService.getAll()
+    retrieveItems() {
+        ItemDataService.getAll()
         .then(response => {
             this.setState({
-                lists: response.data
+                items: response.data
             })
             console.log(response.data);
         })
@@ -52,22 +52,22 @@ export default class SearchLists extends Component {
     }
 
     refreshContainer() {
-        this.retrieveLists();
+        this.retrieveItems();
         this.setState({
-            currentList: null,
+            currentItem: null,
             currentIndex: -1
         });
     }
 
-    setActiveList(list, index) {
+    setActiveItem(item, index) {
         this.setState({
-            currentList: list,
+            currentItem: item,
             currentIndex: index
         });
     }
 
-    removeAllLists() {
-        ListDataService.deleteAll()
+    removeAllItems() {
+        ItemDataService.deleteAll()
         .then(response => {
             console.log(response.data);
             this.refreshList();
@@ -77,11 +77,11 @@ export default class SearchLists extends Component {
         });
     }
 
-    handleSearchTitle() {
-        ListDataService.findByTitle(this.state.searchTitle)
+    handleSearchItemName() {
+        ItemDataService.findByItemName(this.state.searchItem)
         .then(response => {
             this.setState({
-                lists: response.data
+                items: response.data
             });
             console.log(response.data);
         })
@@ -91,7 +91,7 @@ export default class SearchLists extends Component {
     }
 
     render() {
-        const{ searchTitle, lists, currentList, currentIndex } = this.state;
+        const{ searchItem, items, currentItem, currentIndex } = this.state;
 
         return(
 
@@ -102,62 +102,80 @@ export default class SearchLists extends Component {
                         <FormControl
                         type="text"
                         placeholder="search by title"
-                        value={searchTitle}
-                        onChange={this.onChangeSearchTitle}
+                        value={searchItem}
+                        onChange={this.onChangeSearchItem}
                         />
                         <InputGroup.Append>
-                        <Button variant="secondary" onClick={this.handleSearchTitle}>Search</Button>
+                        <Button variant="secondary" onClick={this.handleSearchItemName}>Search</Button>
                         </InputGroup.Append>
                     </InputGroup>
 
                     <div className="col-md-6">
-                        <h2>Your current lists:</h2>
+                        <h2>Your current list:</h2>
 
                         <ul className="list-group">
-                            {lists.length > 0 &&
-                                 this.state.lists.map((list, index) => (
+                            {items.length > 0 &&
+                                 this.state.items.map((item, index) => (
                                     <li className={
                                         "list-group-item " +
                                         (index === currentIndex ? "active" : "")
                                         }
-                                        onClick={() => this.setActiveList(list, index)}
+                                        onClick={() => this.setActiveItem(item, index)}
                                         key={index}
                                     >
-                                        {list.title}
+                                        {item.itemName}
                                     </li>
                             ))}
                         </ul>
 
-                        <Button variant="secondary" onClick={this.removeAllLists}>
+                        <Button variant="secondary" onClick={this.removeAllItems}>
                             Delete all
                         </Button>
                     </div>
 
                     <div id="displayInfo" className="col-md-6">
-                        {currentList ? (
+                        {currentItem ? (
                             <div>
-                                <h2>List</h2>
+                                <h2>Item</h2>
                                 <div>
                                     <label>
-                                        <h4>Title:</h4>
+                                        <h4>Name:</h4>
                                     </label>{" "}
-                                    {currentList.title}
+                                    {currentItem.itemName}
+                                </div>
+                                <div>
+                                    <label>
+                                        <h4>Store Type:</h4>
+                                    </label>{" "}
+                                    {currentItem.storeType}
+                                </div>
+                                <div>
+                                    <label>
+                                        <h4>Food Group:</h4>
+                                    </label>{" "}
+                                    {currentItem.foodGroup}
+                                </div>
+                                <div>
+                                    <label>
+                                        <h4>Quantity:</h4>
+                                    </label>{" "}
+                                    {currentItem.quantity}
                                 </div>
                                 <div>
                                     <label>
                                         <h4>Description:</h4>
                                     </label>{" "}
-                                    {currentList.description}
+                                    {currentItem.description}
                                 </div>
                                 <div>
                                     <label>
                                         <h4>Status:</h4>
                                     </label>{" "}
-                                    {currentList.published ? "Published" : "pending"} 
+                                    {currentItem.published ? "Published 👍 " : "Not Published 👎"} 
                                 </div>
                                 
                                 <div>
-                                    <Link to={"/lists/" + currentList.id}>
+                                    <Link to={"/items/" + currentItem.id}>
                                         Edit
                                     </Link>
                                 </div>
@@ -165,7 +183,7 @@ export default class SearchLists extends Component {
                         ) : (
                             <div>
                                 <br />
-                                <p>Please select a list...</p>
+                                <p>Please select an item...</p>
                             </div>
                         )}
                     </div>

@@ -11,7 +11,7 @@ const NavBar = () => {
   return (
 
     <Navbar collapseOnSelect id="navBody" expand="lg">
-      <Link id="logo" to="/">
+      <Link id="logo" to="/dock">
         <div className="logoContent">
         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" className="bi bi-door-open" viewBox="0 0 16 16">
           <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>

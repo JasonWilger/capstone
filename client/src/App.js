@@ -8,7 +8,7 @@ import Dock from './views/dock';
 import YourList from './views/yourList';
 
 // components
-import List from './components/list.component';
+import Item from './components/item.component';
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
             <Route exact path="/" component={Login} />
             <Route exact path="/dock" component={Dock} />
             <Route exact path="/yourList" component={YourList} />
-            <Route exact path="/lists/:id" component={List} />
+            <Route exact path="/items/:id" component={Item} />
             <Route path="*">
               <Redirect to='/' />
             </Route>
