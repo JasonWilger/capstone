@@ -27,3 +27,6 @@ module.exports = (sequelize, Sequelize) => {
   return Item;
     
 };
+
+// sequelize migration:generate --name items_migration
+// sequelize migration:generate --name users_migration
