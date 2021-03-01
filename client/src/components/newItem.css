@@ -1,0 +1,27 @@
+.newItemBody {
+    display: flex;
+    justify-content: center;
+}
+
+#accordBody {
+    width: 75%;
+    padding-top: 2%;
+    padding-bottom: 5%;
+}
+
+#accordButton {
+    width: 100%;
+    outline: none;
+    box-shadow: none !important;
+    -webkit-appearance: none;
+}
+
+#accordHead {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.submitList {
+    padding: 2%;
+}

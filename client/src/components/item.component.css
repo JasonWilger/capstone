@@ -1,0 +1,45 @@
+.updateBody {
+    display: flex;
+    justify-content: center;
+}
+
+.editForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.updateForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputGroup {
+    width: 150%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3%;
+}
+
+#upButton {
+    margin-left: 2%;
+    margin-right: 2%;
+    color: white;
+    text-decoration: none;
+}
+
+#FoLabel {
+    display: flex;
+    justify-content: center;
+}
+
+#oops {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+}

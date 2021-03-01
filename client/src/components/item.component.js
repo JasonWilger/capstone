@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './item.component.css';
 import ItemDataService from '../services/item.services';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
@@ -173,102 +174,124 @@ export default class Item extends Component {
 
         return (
 
-            <div>
+            <div id="updateBody">
                 {currentItem ? (
                     <div className="editForm">
+
                         <h2>{"Lets make some changes to " + currentItem.itemName + " !"}</h2>
-                            <Form>
-                            <InputGroup className="mb-3">
-                            <Form.Label>Item Name</Form.Label>
-                                <FormControl
-                                type="text"
-                                placeholder="New Name"
-                                id="itemName"
-                                value={currentItem.itemName}
-                                onChange={this.onChangeItemName}
-                                />
-                            </InputGroup>
+                            <Form className="updateForm">
 
-                            <InputGroup className="mb-3">
-                            <Form.Label>Item Store Type</Form.Label>
-                                <FormControl
-                                type="text"
-                                placeholder="New Name"
-                                id="storeType"
-                                value={currentItem.storeType}
-                                onChange={this.onChangeStoreType}
-                                />
-                            </InputGroup>
+                                <Form.Label id="FoLabel">Item Name</Form.Label>
+                                <InputGroup className="inputGroup mb-3">
+                                    <FormControl
+                                    type="text"
+                                    placeholder="New Name"
+                                    id="itemName"
+                                    value={currentItem.itemName}
+                                    onChange={this.onChangeItemName}
+                                    />
+                                </InputGroup>
 
-                            <InputGroup className="mb-3">
-                            <Form.Label>Item Food Group</Form.Label>
-                                <FormControl
-                                type="text"
-                                placeholder="New Name"
-                                id="foodGroup"
-                                value={currentItem.foodGroup}
-                                onChange={this.onChangeFoodGroup}
-                                />
-                            </InputGroup>
+                                <Form.Group className="inputGroup mb-3" controlId="exampleForm.ControlSelect1">
+                                    <Form.Label id="FoLabel">Store Type</Form.Label>
+                                    <Form.Control
+                                    required
+                                    as="select"
+                                    value={this.state.storeType}
+                                    onChange={this.onChangeStoreType}
+                                    as="select" 
+                                    defaultValue="Choose...">
+                                    <option>Choose...</option>
+                                    <option>Dry</option>
+                                    <option>Cold</option>
+                                    <option>Frozen</option>
+                                    </Form.Control>
+                                </Form.Group>
+                        
+                                <Form.Group className="inputGroup mb-3" controlId="exampleForm.ControlSelect1">
+                                    <Form.Label id="FoLabel">Food Group</Form.Label>
+                                    <Form.Control
+                                    required
+                                    value={this.state.foodGroup}
+                                    onChange={this.onChangeFoodGroup}
+                                    as="select" 
+                                    defaultValue="Choose...">
+                                    <option>Choose...</option>
+                                    <option>Vegetable</option>
+                                    <option>Fruit</option>
+                                    <option>Proteins</option>
+                                    <option>Dairy</option>
+                                    <option>Grains</option>
+                                    </Form.Control>
+                                </Form.Group>
 
-                            <InputGroup className="mb-3">
-                            <Form.Label>Item Quantity</Form.Label>
-                                <FormControl
-                                type="integer"
-                                placeholder="New quantity"
-                                id="quantity"
-                                value={currentItem.quantity}
-                                onChange={this.onChangeQuantity}
-                                />
-                            </InputGroup>
+                                <Form.Label id="FoLabel">Item Quantity</Form.Label>
+                                <InputGroup className="inputGroup mb-3">
+                                    <FormControl
+                                    type="integer"
+                                    placeholder="New quantity"
+                                    id="quantity"
+                                    value={currentItem.quantity}
+                                    onChange={this.onChangeQuantity}
+                                    />
+                                </InputGroup>
 
-                            <InputGroup className="mb-3">
-                            <Form.Label>Item Description</Form.Label>
-                                <FormControl
-                                type="text"
-                                placeholder="New Description"
-                                id="description"
-                                value={currentItem.description}
-                                onChange={this.onChangeDescription}
-                                />
-                            </InputGroup>
+                                <Form.Label id="FoLabel">Item Description</Form.Label>
+                                <InputGroup className="inputGroup mb-3">
+                                    <FormControl
+                                    type="text"
+                                    placeholder="New Description"
+                                    id="description"
+                                    value={currentItem.description}
+                                    onChange={this.onChangeDescription}
+                                    />
+                                </InputGroup>
 
-                            <InputGroup className="mb-3">
-                                <label htmlFor="status">Status:</label>
-                                {currentItem.published ? "Published 👍 " : "Not Published 👎"}
-                            </InputGroup>
+                                <InputGroup className="inputGroup mb-3">
+                                    <label id="FoLabel" htmlFor="status">Status: </label>
+                                    {currentItem.published ? " Published 👍 " : " Not Published 👎"}
+                                </InputGroup>
+
                             </Form>
 
-                            {currentItem.published ? (
-                                <Button onClick={() => this.updatePublished(false)}>
-                                    UnPublish
+                            <div className="buttons">
+                                {currentItem.published ? (
+                                    <Button id="upButton" onClick={() => this.updatePublished(false)}>
+                                        UnPublish
+                                    </Button>
+                                ) : (
+                                    <Button id="upButton" onClick={() => this.updatePublished(true)}>
+                                        Publish
+                                    </Button>
+                                )}
+
+                                <Button id="upButton" onClick={this.updateList}>
+                                    Update
                                 </Button>
-                            ) : (
-                                <Button onClick={() => this.updatePublished(true)}>
-                                    Publish
+
+                                <Button id="upButton" variant="danger" onClick={this.deleteList}>
+                                <Link id="upButton" to={"/yourList"}>
+                                    Delete
+                                </Link>
                                 </Button>
-                            )}
 
-                            <Button onClick={this.deleteList}>
-                            <Link to={"/yourList"}>
-                                Delete
-                            </Link>
-                            </Button>
+                                <Button id="upButton">
+                                <Link id="upButton" to={"/yourList"}>
+                                    Back
+                                </Link>
+                                </Button>
+                                <p>{this.state.message}</p>
+                            </div>
 
-                            <Button onClick={this.updateList}>
-                                Update
-                            </Button>
-
+                        </div>
+                        ) : (
+                        <div id="oops">
+                            <p>Please go back to select an item...</p>
                             <Button variant="primary">
-                            <Link to={"/yourList"}>
+                            <Link id="upButton" to={"/yourList"}>
                                 Back
                             </Link>
                             </Button>
-                            <p>{this.state.message}</p>
-                        </div>
-                        ) : (
-                        <div>
-                            <p>Please select a list...</p>
                         </div>
                 )}
             </div>

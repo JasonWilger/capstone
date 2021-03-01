@@ -2,52 +2,69 @@ import './dock.css';
 import React, { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import Button from 'react-bootstrap/Button'
-
+import axios from "axios";
 
 // components
 import NavBar from '../components/navbar';
 import Footer from '../components/footer';
-import Quick from '../components/quick';
 
 
 const Dock = () => {
 
   // code for chart
   const [chartData, setChartData] = useState({})
+  const [storeType, setStoreType] = useState([]);
+  const [chartCold, setChartCold] = useState([]);
+  const [chartFrozen, setChartFrozen] = useState([]);
     
   const chart = () => {
+    let sType = [];
+    let charCold = [];
+    let charFroz = [];
+    axios
+      .get("http://localhost:9000/api/item")
+      .then(res => {
+        console.log(res);
+        for (const dataObj of res.data) {
+          sType.push(parseInt(dataObj.storeType));
+          charCold.push(parseInt(dataObj.storeType));
+          charFroz.push(parseInt(dataObj.storeType));
+        }
       setChartData({
-      labels: [
-        '0', 'week 1', 'week 2', 'week 3', 'week 4'
-      ],
+      labels: [1, 2, 3, 4],
       datasets: [
         {
           label: 'Dry',
-          data: [12, 50, 3, 5, 2, 3],
+          data: sType,
           fill: false,
           backgroundColor: 'black',
           borderColor: '#E9DDBE',
         },
         {
           label: 'Cold',
-          data: [5, 65, 16, 18, 26, 3],
+          data: charCold,
           fill: false,
           backgroundColor: 'black',
           borderColor: '#1529F0',
         },
         {
           label: 'Frozen',
-          data: [7, 78, 25, 45, 2, 16],
+          data: charFroz,
           fill: false,
           backgroundColor: 'black',
           borderColor: '#15BEF0',
         },
       ],
-    })
-  }
+    });
+  })
+  .catch(err => {
+    console.log(err);
+  });
+  console.log(sType, charCold, charFroz);
+  };
 
   useEffect(() => {
-      chart()
+      chart();
   }, [])
   // end code for chart
 
@@ -55,7 +72,6 @@ const Dock = () => {
   return (
       <div>
       <NavBar />
-      <Quick />
       
         <div className="mainContent">
           <div>
@@ -115,6 +131,7 @@ const Dock = () => {
 
           </div>
           {/* end breakdown section */}
+
         </div>
 
     <Footer />
@@ -122,6 +139,6 @@ const Dock = () => {
 
   );
   
-}
+};
 
 export default Dock;

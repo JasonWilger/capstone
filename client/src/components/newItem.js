@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import ItemDataService from '../services/item.services'
+import './newItem.css';
+import ItemDataService from '../services/item.services';
+import Accordion from 'react-bootstrap/Accordion';
+import Card from  'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -13,7 +16,6 @@ export default class NewItem extends Component {
         this.onChangeQuantity = this.onChangeQuantity.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.saveItem = this.saveItem.bind(this);
-        // this.newItem = this.newItem.bind(this);
 
         this.state = {
             controlId: null,
@@ -89,27 +91,21 @@ export default class NewItem extends Component {
         window.location.reload(false);
     }
 
-    // newItem() {
-    //     this.setState({
-    //         controlId: null,
-    //         itemName: "",
-    //         description: "",
-    //         published: false,
-
-    //         submitted: true
-    //     })
-    // }
-
     render() {
         return (
-            // <div className="submitForm">
-            //     {this.state.submitted ? (
-            //         <div>
-            //             <h2>You have successfully created a new list!</h2>
-            //             <Button variant="primary" onClick={this.newList}>Add</Button>
-            //         </div>
-            //     ) : (
-                    <div>
+
+            <div className="newItemBody">
+
+                <Accordion id="accordBody">
+                    <Card>
+                    <Card.Header id="accordHead">
+                    <Accordion.Toggle id="accordButton" as={Button} variant="" eventKey="0">
+                        Add Item!
+                    </Accordion.Toggle>
+                    </Card.Header>
+                        <Accordion.Collapse eventKey="0">
+                        <Card.Body id="">
+
                         <Form className="submitList">
                             <Form.Group controlId="itemName">
                                 <Form.Label>Item Name</Form.Label>
@@ -118,30 +114,39 @@ export default class NewItem extends Component {
                                 required
                                 value={this.state.itemName}
                                 onChange={this.onChangeItemName}
-                                placeholder="ex: List #1"
+                                placeholder="ex: Broccoli"
                                 />
                             </Form.Group>
 
-                            <Form.Group controlId="itemStoreType">
+                            <Form.Group controlId="exampleForm.ControlSelect1">
                                 <Form.Label>Store Type</Form.Label>
-                                <Form.Control 
-                                type="text"
+                                <Form.Control
                                 required
+                                as="select"
                                 value={this.state.storeType}
                                 onChange={this.onChangeStoreType}
-                                placeholder="ex: List #1"
-                                />
-                            </Form.Group>
-
-                            <Form.Group controlId="itemFoodGroup">
+                                as="select" 
+                                defaultValue="Choose...">
+                                <option>Choose...</option>
+                                <option>Dry</option>
+                                <option>Cold</option>
+                                <option>Frozen</option>
+                                </Form.Control>
+                    
                                 <Form.Label>Food Group</Form.Label>
-                                <Form.Control 
-                                type="text"
+                                <Form.Control
                                 required
                                 value={this.state.foodGroup}
                                 onChange={this.onChangeFoodGroup}
-                                placeholder="ex: List #1"
-                                />
+                                as="select" 
+                                defaultValue="Choose...">
+                                <option>Choose...</option>
+                                <option>Vegetable</option>
+                                <option>Fruit</option>
+                                <option>Proteins</option>
+                                <option>Dairy</option>
+                                <option>Grains</option>
+                                </Form.Control>
                             </Form.Group>
 
                             <Form.Group controlId="itemQuantity">
@@ -169,11 +174,15 @@ export default class NewItem extends Component {
                             <Button onClick={this.saveItem} variant="primary">
                                 Submit
                             </Button>
-
                         </Form>
-                    </div>
-            //     )}
-            // </div>
+                        </Card.Body>
+                        </Accordion.Collapse>
+
+                    </Card>
+                </Accordion>
+
+            </div>
+
         )
     }
 };

@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
 app.get("/users", (req, res) => {
   res.status(200).send("Welcome to Users!");
 });
-app.get("/items", (req, res) => {
+app.get("/item", (req, res) => {
   res.status(200).send("Welcome to Items!");
 });
 // app.get("/listItems", (req, res) => {
