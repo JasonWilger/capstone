@@ -173,6 +173,7 @@ export default class Item extends Component {
         const { currentItem } = this.state;
 
         return (
+            <div className="backGround">
 
             <div id="updateBody">
                 {currentItem ? (
@@ -294,6 +295,8 @@ export default class Item extends Component {
                             </Button>
                         </div>
                 )}
+
+            </div>
             </div>
         );
     }

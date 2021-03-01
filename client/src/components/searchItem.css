@@ -26,6 +26,10 @@
     margin-left: 10%;
     margin-right: 10%;
     width: 75%;
+    padding-bottom: 2%;
+    border-radius: 5%;
+    border-top: 3px solid #9FE2BF;
+    border-bottom: 3px solid #9FE2BF;
 }
 
 #editButton {

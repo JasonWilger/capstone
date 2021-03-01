@@ -1,23 +1,18 @@
 import './footer.css';
-import { Navbar, Nav } from 'react-bootstrap';
 
 const Footer = () => {
 
   return (
 
-    <Navbar id="footerBody">
-      <Nav className="justify-content-center">
-        <Nav.Item>
-          <Nav.Link id="item1" href="/home">footer</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link id="item2" eventKey="link-1">footer</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link id="item3" eventKey="link-2">footer</Nav.Link>
-        </Nav.Item>
-      </Nav>
-    </Navbar>
+    <div className="Footer">
+    <div id="foot-info">
+      <div id="foot-links">
+        <a href="https://www.linkedin.com/in/jason-wilger/">Linkedin</a>
+        <a href="https://github.com/JasonWilger">GitHub</a>
+        <a href="https://vsco.co/wilger11/gallery">VSCO</a>
+      </div>
+    </div>
+  </div>
 
   );
   

@@ -1,28 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
-
-#footerBody {
+.Footer {
+    background-image: url(../img/food8.jpg);
     border-top: 3px solid #9FE2BF;
-    border-radius: 10%;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+    padding-bottom: 2%;
 }
 
-#item1 {
-    color: black;
-    text-decoration: none;
-    font-size: 20px;
-    font-family: 'Comfortaa', cursive;
-}
-
-#item2 {
-    color: black;
-    text-decoration: none;
-    font-size: 20px;
-    font-family: 'Comfortaa', cursive;
-}
-
-#item3 {
-    color: black;
-    text-decoration: none;
-    font-size: 20px;
-    font-family: 'Comfortaa', cursive;
+#foot-info {
+    padding: 2%;
 }

@@ -1,3 +1,9 @@
+.backGround {
+    background-image: url(../img/food8.jpg);
+    padding-top: 6%;
+    padding-bottom: 6%;
+}
+
 .updateBody {
     display: flex;
     justify-content: center;
@@ -7,6 +13,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: white;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 5%;
+    border-top: 3px solid #9FE2BF;
+    border-bottom: 3px solid #9FE2BF;
 }
 
 .updateForm {
@@ -22,7 +34,7 @@
 .buttons {
     display: flex;
     justify-content: center;
-    margin-bottom: 3%;
+    margin-bottom: 5%;
 }
 
 #upButton {
