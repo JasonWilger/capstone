@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "http://drona.db.elephantsql.com",
+  baseURL: "https://the--pantry.herokuapp.com/api",
   headers: {
     "Content-type": "application/json"
   }
