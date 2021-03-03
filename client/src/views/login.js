@@ -7,13 +7,13 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 // import logIn from '../firebase/logIn.firebase';
-import signUp from '../firebase/signUp.firebase';
+// import signUp from '../firebase/signUp.firebase';
 import chartImg from '../img/line-ex.png';
-import firebase from '../firebase/firebase';
-import { Cookies } from "js-cookie";
-import { useHistory } from "react-router-dom";
-import ItemDataService from '../services/item.services';
-import UserDataService from '../services/users.service';
+// import firebase from '../firebase/firebase';
+// import { Cookies } from "js-cookie";
+// import { useHistory } from "react-router-dom";
+// import ItemDataService from '../services/item.services';
+// import UserDataService from '../services/users.service';
 
 
 
@@ -27,43 +27,43 @@ const Login = (props) => {
   // end modal
 
 
-const history = useHistory()
+// const history = useHistory()
 
-function HandleLogIn() {
+// function HandleLogIn() {
 
-    console.log('Login is running')
-    let emailValue = document.getElementById('formBasicEmail').value;
-    let passwordValue = document.getElementById('formBasicPassword').value;
-    let errorMessageBox = document.getElementById('errorMessage');
-    firebase
-    .auth()
-    .signInWithEmailAndPassword(emailValue, passwordValue)
-    .then((response) => {
-        Cookies.set('userToken', response.user.uid)
-        history.push("/dock");
-    })
-    .then(() => {
-        props.logInClick()
-    })
-    .then(() => {
-        return UserDataService.get(Cookies.get('userToken'))
-    })
-    .then((response) => {
-        props.findUser(response.data[0])
-        findListData();
-    })
-    .catch(function(error) {
-        errorMessageBox.innerHTML = error.message;
-        console.log(error);
-    });
-}
+//     console.log('Login is running')
+//     let emailValue = document.getElementById('formBasicEmail').value;
+//     let passwordValue = document.getElementById('formBasicPassword').value;
+//     let errorMessageBox = document.getElementById('errorMessage');
+//     firebase
+//     .auth()
+//     .signInWithEmailAndPassword(emailValue, passwordValue)
+//     .then((response) => {
+//         Cookies.set('userToken', response.user.uid)
+//         history.push("/dock");
+//     })
+//     .then(() => {
+//         props.logInClick()
+//     })
+//     .then(() => {
+//         return UserDataService.get(Cookies.get('userToken'))
+//     })
+//     .then((response) => {
+//         props.findUser(response.data[0])
+//         findListData();
+//     })
+//     .catch(function(error) {
+//         errorMessageBox.innerHTML = error.message;
+//         console.log(error);
+//     });
+// }
 
-function findListData() {
-  ItemDataService.getAll(Cookies.get('userToken'))
-    .then((response) => {
-        props.findItems(response.data);
-    })
-}
+// function findListData() {
+//   ItemDataService.getAll(Cookies.get('userToken'))
+//     .then((response) => {
+//         props.findItems(response.data);
+//     })
+// }
 
 
   return (
@@ -124,9 +124,9 @@ function findListData() {
                 <Form.Control type="password" placeholder="Password" />
               </Form.Group>
               <div>
-              <Button variant="primary" onClick={HandleLogIn}>
+              {/* <Button variant="primary" onClick={HandleLogIn}>
                 Submit
-              </Button>
+              </Button> */}
 
               <>
                 <Button id="noAcc" variant="" onClick={handleShow}>
@@ -157,9 +157,9 @@ function findListData() {
                     <Button variant="secondary" onClick={handleClose}>
                       Close
                     </Button>
-                    <Button variant="primary" onClick={signUp}>
+                    {/* <Button variant="primary" onClick={signUp}>
                       Submit
-                    </Button>
+                    </Button> */}
                   </Modal.Footer>
                 </Modal>
               </>
