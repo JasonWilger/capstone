@@ -13,54 +13,44 @@ const Dock = () => {
 
   // code for chart
   const [chartData, setChartData] = useState({})
-  const [storeType, setStoreType] = useState([]);
-  const [chartCold, setChartCold] = useState([]);
-  const [chartFrozen, setChartFrozen] = useState([]);
+  const [Price, setPrice] = useState([]);
+  const [Quantity, setQuantity] = useState([]);
     
   const chart = () => {
-    let sType = [];
-    let charCold = [];
-    let charFroz = [];
+    let Price = [];
+    let Quantity = [];
     axios
       .get("http://localhost:9000/api/item")
       .then(res => {
         console.log(res);
         for (const dataObj of res.data) {
-          sType.push(parseInt(dataObj.storeType));
-          charCold.push(parseInt(dataObj.storeType));
-          charFroz.push(parseInt(dataObj.storeType));
+          Price.push(parseInt(dataObj.price));
+          Quantity.push(parseInt(dataObj.quantity));
         }
       setChartData({
       labels: [1, 2, 3, 4],
       datasets: [
         {
-          label: 'Dry',
-          data: sType,
+          label: 'Spending',
+          data: Price,
           fill: false,
           backgroundColor: 'black',
-          borderColor: '#E9DDBE',
+          borderColor: '#85bb65',
         },
         {
-          label: 'Cold',
-          data: charCold,
+          label: 'List Items',
+          data: Quantity,
           fill: false,
           backgroundColor: 'black',
           borderColor: '#1529F0',
-        },
-        {
-          label: 'Frozen',
-          data: charFroz,
-          fill: false,
-          backgroundColor: 'black',
-          borderColor: '#15BEF0',
-        },
+        }
       ],
     });
   })
   .catch(err => {
     console.log(err);
   });
-  console.log(sType, charCold, charFroz);
+  console.log(Price, Quantity);
   };
 
   useEffect(() => {

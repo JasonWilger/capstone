@@ -1,5 +1,10 @@
-import firebase from '../firebase';
+import firebase from './firebase';
 
+firebase
+.auth()
+.onAuthStateChanged(user => {
+    console.log(user);
+})
 
 function logOut() {
     console.log('logOut is running')
@@ -8,10 +13,6 @@ function logOut() {
     firebase
     .auth()
     .signOut(logout)
-    .then(() => {
-        //logOut
-        console.log("user is logged out");
-    })
     .catch(function(error) {
         errorMessageBox.innerHTML = error.message;
         console.log(error.message);

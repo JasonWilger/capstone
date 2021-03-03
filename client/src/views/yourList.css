@@ -12,8 +12,7 @@
 #mainTitle {
     display: flex;
     justify-content: center;
-    padding-top: -2%;
+    padding-top: 2%;
     padding-bottom: 2%;
     font-family: 'Comfortaa', cursive;
-    font-size: larger;
 }

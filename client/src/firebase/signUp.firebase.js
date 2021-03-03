@@ -1,4 +1,4 @@
-import firebase from '../firebase';
+import firebase from './firebase';
 
 function signupForm() {
     console.log('signup is running')

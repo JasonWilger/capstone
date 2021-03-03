@@ -14,8 +14,8 @@
 #title {
     display: flex;
     justify-content: center;
-    padding-top: -2%;
-    padding-bottom: 2%;
+    padding-top: 2%;
+    padding-bottom: 3%;
     font-family: 'Comfortaa', cursive;
 }
 

@@ -15,7 +15,7 @@ const YourList = () => {
     <div>
       <NavBar />
         <div className="mainContent">
-          <div id="mainTitle">Your Grocery List</div>
+          <h1 id="mainTitle">Your Grocery List</h1>
           <NewItem />
           <SearchItems />
         </div>

@@ -6,12 +6,18 @@ import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import logIn from '../components/logIn.firebase';
-import signUp from '../components/signUp.firebase';
+// import logIn from '../firebase/logIn.firebase';
+import signUp from '../firebase/signUp.firebase';
 import chartImg from '../img/line-ex.png';
+import firebase from '../firebase/firebase';
+import { Cookies } from "js-cookie";
+import { useHistory } from "react-router-dom";
+import ItemDataService from '../services/item.services';
+import UserDataService from '../services/users.service';
 
 
-const Login = () => {
+
+const Login = (props) => {
 
   // modal
   const [show, setShow] = useState(false);
@@ -19,6 +25,45 @@ const Login = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   // end modal
+
+
+const history = useHistory()
+
+function HandleLogIn() {
+
+    console.log('Login is running')
+    let emailValue = document.getElementById('formBasicEmail').value;
+    let passwordValue = document.getElementById('formBasicPassword').value;
+    let errorMessageBox = document.getElementById('errorMessage');
+    firebase
+    .auth()
+    .signInWithEmailAndPassword(emailValue, passwordValue)
+    .then((response) => {
+        Cookies.set('userToken', response.user.uid)
+        history.push("/dock");
+    })
+    .then(() => {
+        props.logInClick()
+    })
+    .then(() => {
+        return UserDataService.get(Cookies.get('userToken'))
+    })
+    .then((response) => {
+        props.findUser(response.data[0])
+        findListData();
+    })
+    .catch(function(error) {
+        errorMessageBox.innerHTML = error.message;
+        console.log(error);
+    });
+}
+
+function findListData() {
+  ItemDataService.getAll(Cookies.get('userToken'))
+    .then((response) => {
+        props.findItems(response.data);
+    })
+}
 
 
   return (
@@ -53,19 +98,16 @@ const Login = () => {
         <div className="appDisc">
         <h2>The door you can open from anywhere.</h2>
           <p>
-          this is a description of the app this is a description of the app 
-          this is a description of the app
-          this is a description of the appthis is a description of the app
-          this is a description of the appthis is a description of the app
-          this is a description of the appthis is a description of the app
-          this is a description of the appthis is a description of the app
-          this is a description of the appthis is a description of the app
-          this is a description of the appthis is a description of the app
+          The Pantry is the latest and greatest grocery management application!
+          This app was designed to help frequent shoppers remember what was need,
+          get only what is required, and to take a load off of remembering what is stored in the kitchen.
+          The dynamic list allows users to add items from a recent trip to the ongoing list and users
+          can even update the items after they are saved.
           </p>
 
         </div>
         <div id="promptUser">
-        <Card id="signinCard" style={{ width: '18rem' }}>
+        <Card id="signInCard" style={{ width: '18rem' }}>
           <Card.Body>
             <Card.Title>Login</Card.Title>
             <Form>
@@ -82,7 +124,7 @@ const Login = () => {
                 <Form.Control type="password" placeholder="Password" />
               </Form.Group>
               <div>
-              <Button variant="primary" onClick={logIn}>
+              <Button variant="primary" onClick={HandleLogIn}>
                 Submit
               </Button>
 
@@ -95,6 +137,7 @@ const Login = () => {
                   <Modal.Header closeButton>
                     <Modal.Title>Sign-Up</Modal.Title>
                   </Modal.Header>
+                  
                   <div id="signupForm">
                   <Form.Group controlId="signupEmail">
                     <Form.Label>Email address</Form.Label>
@@ -109,6 +152,7 @@ const Login = () => {
                     <Form.Control type="password" placeholder="Password" />
                   </Form.Group>
                   </div>
+
                   <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                       Close
@@ -139,7 +183,7 @@ const Login = () => {
                 </div>
               <div id="foot-links">
                 <a href="https://www.linkedin.com/in/jason-wilger/">Linkedin</a>
-                <a href="https://github.com/JasonWilger">GitHub</a>
+                <a href="https://github.com/JasonWilger/capstone">GitHub</a>
                 <a href="https://vsco.co/wilger11/gallery">VSCO</a>
               </div>
             </div>

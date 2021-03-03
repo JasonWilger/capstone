@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
 .addViewBody {
     display: flex;
     justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
 }
 
 #listItems {
@@ -20,6 +25,10 @@
     width: 100%;
 }
 
+#listTitle {
+    font-family: 'Comfortaa', cursive;
+}
+
 #displayInfo {
     display: flex;
     justify-content: center;
@@ -30,6 +39,13 @@
     border-radius: 5%;
     border-top: 3px solid #9FE2BF;
     border-bottom: 3px solid #9FE2BF;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
 #editButton {

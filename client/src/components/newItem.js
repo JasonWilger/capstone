@@ -14,6 +14,7 @@ export default class NewItem extends Component {
         this.onChangeStoreType = this.onChangeStoreType.bind(this);
         this.onChangeFoodGroup = this.onChangeFoodGroup.bind(this);
         this.onChangeQuantity = this.onChangeQuantity.bind(this);
+        this.onChangePrice = this.onChangePrice.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.saveItem = this.saveItem.bind(this);
 
@@ -23,6 +24,7 @@ export default class NewItem extends Component {
             storeType: "",
             foodGroup: "",
             quantity: null,
+            price: null,
             description: "",
             published: false,
 
@@ -54,6 +56,12 @@ export default class NewItem extends Component {
         });
     }
 
+    onChangePrice(e) {
+        this.setState({
+            price: e.target.value
+        });
+    }
+
     onChangeDescription(e) {
         this.setState({
             description: e.target.value
@@ -66,6 +74,7 @@ export default class NewItem extends Component {
             storeType: this.state.storeType,
             foodGroup: this.state.foodGroup,
             quantity: this.state.quantity,
+            price: this.state.price,
             description: this.state.description
         };
 
@@ -77,6 +86,7 @@ export default class NewItem extends Component {
             storeType: response.data.storeType,
             foodGroup: response.data.foodGroup,
             quantity: response.data.quantity,
+            price: response.data.price,
             description: response.data.description,
             published: response.data,
 
@@ -114,7 +124,7 @@ export default class NewItem extends Component {
                                 required
                                 value={this.state.itemName}
                                 onChange={this.onChangeItemName}
-                                placeholder="ex: Broccoli"
+                                placeholder="Enter a name"
                                 />
                             </Form.Group>
 
@@ -156,7 +166,18 @@ export default class NewItem extends Component {
                                 required
                                 value={this.state.quantity}
                                 onChange={this.onChangeQuantity}
-                                placeholder="ex: List #1"
+                                placeholder="Enter a quantity"
+                                />
+                            </Form.Group>
+
+                            <Form.Group controlId="itemPrice">
+                                <Form.Label>Price</Form.Label>
+                                <Form.Control 
+                                type="integer"
+                                required
+                                value={this.state.price}
+                                onChange={this.onChangePrice}
+                                placeholder="Enter a dollar amount"
                                 />
                             </Form.Group>
 
@@ -167,7 +188,7 @@ export default class NewItem extends Component {
                                 required
                                 value={this.state.description}
                                 onChange={this.onChangeDescription}
-                                placeholder="enter a description"
+                                placeholder="Enter a description"
                                 />
                             </Form.Group>
 

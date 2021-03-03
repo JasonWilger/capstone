@@ -15,6 +15,7 @@ export default class Item extends Component {
         this.onChangeStoreType = this.onChangeStoreType.bind(this);
         this.onChangeFoodGroup = this.onChangeFoodGroup.bind(this);
         this.onChangeQuantity = this.onChangeQuantity.bind(this);
+        this.onChangePrice = this.onChangePrice.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.getItem = this.getItem.bind(this);
         this.updatePublished = this.updatePublished.bind(this);
@@ -28,7 +29,7 @@ export default class Item extends Component {
                 storeType: "",
                 foodGroup: "",
                 quantity: null,
-                description: "",
+                price: null,
                 description: "",
                 published: false
             },
@@ -92,6 +93,19 @@ export default class Item extends Component {
         });
     }
 
+    onChangePrice(e) {
+        const price = e.target.value;
+
+        this.setState(function(prevState) {
+            return {
+                currentItem: {
+                    ...prevState.currentItem,
+                    price: price
+                }
+            };
+        });
+    }
+
     onChangeDescription(e) {
         const description = e.target.value;
 
@@ -123,6 +137,7 @@ export default class Item extends Component {
             storeType: this.state.currentItem.storeType,
             foodGroup: this.state.currentItem.foodGroup,
             quantity: this.state.currentItem.quantity,
+            price: this.state.currentItem.price,
             description: this.state.currentItem.description,
             published: status
         };
@@ -237,6 +252,17 @@ export default class Item extends Component {
                                     />
                                 </InputGroup>
 
+                                <Form.Label id="FoLabel">Item Price</Form.Label>
+                                <InputGroup className="inputGroup mb-3">
+                                    <FormControl
+                                    type="integer"
+                                    placeholder="New price"
+                                    id="price"
+                                    value={currentItem.price}
+                                    onChange={this.onChangePrice}
+                                    />
+                                </InputGroup>
+
                                 <Form.Label id="FoLabel">Item Description</Form.Label>
                                 <InputGroup className="inputGroup mb-3">
                                     <FormControl
@@ -250,7 +276,7 @@ export default class Item extends Component {
 
                                 <InputGroup className="inputGroup mb-3">
                                     <label id="FoLabel" htmlFor="status">Status: </label>
-                                    {currentItem.published ? " Published 👍 " : " Not Published 👎"}
+                                    {currentItem.published ? " Saved to List 👍 " : " Not Saved 👎"}
                                 </InputGroup>
 
                             </Form>
@@ -258,11 +284,11 @@ export default class Item extends Component {
                             <div className="buttons">
                                 {currentItem.published ? (
                                     <Button id="upButton" onClick={() => this.updatePublished(false)}>
-                                        UnPublish
+                                    Remove
                                     </Button>
                                 ) : (
                                     <Button id="upButton" onClick={() => this.updatePublished(true)}>
-                                        Publish
+                                        Save
                                     </Button>
                                 )}
 

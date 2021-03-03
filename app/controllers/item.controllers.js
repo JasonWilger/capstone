@@ -29,7 +29,13 @@ exports.create = (req, res) => {
       message: "No quantity detected!"
       });
       return;
-
+      
+  } else if (!req.body.price) {
+    res.status(400).send({
+    message: "No price detected!"
+    });
+    return;
+        
   } else if (!req.body.description) {
       res.status(400).send({
       message: "No description detected!"
@@ -43,6 +49,7 @@ exports.create = (req, res) => {
         storeType: req.body.storeType,
         foodGroup: req.body.foodGroup,
         quantity: req.body.quantity,
+        price: req.body.price,
         description: req.body.description,
         published: req.body.published ? req.body.published : false
     };

@@ -3,7 +3,7 @@ import React from 'react'
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-import logOut from './logOut.firebase';
+import logOut from '../firebase/logOut.firebase';
 
 
 const NavBar = () => {
@@ -25,11 +25,11 @@ const NavBar = () => {
         <Nav className="navItems">
           <Link id="dock" to="/dock">Dock</Link>
           <Link id="yourList" to="/yourList">List</Link>
-          {/* <Link id="logOut" to="/login"> */}
-          <Button id="logOut" variant="primary" onClick={logOut}>
+          <Link id="logOut" to="/login">
+          <Button id="logOut" variant="" onClick={logOut}>
             Logout
           </Button>
-          {/* </Link> */}
+          </Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
