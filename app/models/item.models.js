@@ -14,10 +14,10 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING
     },
     quantity: {
-      type: Sequelize.NUMBER
+      type: Sequelize.INTEGER
     },
     price: {
-      type: Sequelize.NUMBER
+      type: Sequelize.INTEGER
     },
     description: {
       type: Sequelize.STRING
