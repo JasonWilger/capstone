@@ -98,10 +98,8 @@ const NavBar = () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
         <Nav className="navItems">
-          <Link id="dock" to="/dock">Dock</Link>
-          <Link id="yourList" to="/yourList">List</Link>
 
-          {/* modal */}
+            {/* modal */}
             <Button variant="warning" onClick={() => setModalShow(true)}>
               Instructions
             </Button>
@@ -111,6 +109,12 @@ const NavBar = () => {
               onHide={() => setModalShow(false)}
             />
           {/* end modal */}
+          
+          <Link id="dock" to="/dock">Dock</Link>
+          <Link id="yourList" to="/yourList">List</Link>
+          <Button id="endSesh" variant="danger" href="/">
+            End 
+          </Button>
 
         </Nav>
       </Navbar.Collapse>

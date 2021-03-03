@@ -24,9 +24,9 @@ const Welcome = (props) => {
       </Link>
       </Navbar>
 
-      <div className="loginBody">
+      <div className="welcomeBody">
 
-        <div id="loginTitle">
+        <div id="welcomeTitle">
           Welcome!
         </div>
 
@@ -44,11 +44,11 @@ const Welcome = (props) => {
         </div>
 
         <div id="promptUser">
-        <Card id="signInCard" style={{ width: '18rem' }}>
+        <Card id="startCard" style={{ width: '18rem' }}>
           <Card.Body>
             <Card.Title id="startTitle">Lets Get Started!</Card.Title>
             <Link to="/dock">
-              <Button id="startButton">
+              <Button variant="" id="startButton">
                 Start
               </Button>
             </Link>

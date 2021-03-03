@@ -107,7 +107,7 @@ const Dock = () => {
 
             <h1 id="breakTitle">What am I looking at?</h1>
 
-            <div id="spending">
+            <div id="Spending">
               <h3>Spending</h3>
               <div>
                 The <b>GREEN LINE</b> is there to make sure you now what
@@ -118,7 +118,7 @@ const Dock = () => {
               </div>
             </div>
 
-            <div id="quantity">
+            <div id="Quantity">
               <h3>List Items</h3>
               <div>
               Managing you grocery list can be a pain. The <b>BLUE LINE</b> represents

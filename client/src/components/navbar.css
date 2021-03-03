@@ -30,6 +30,7 @@
 
 #dock {
     color: black;
+    padding-left: 10%;
     padding-right: 10%;
     text-decoration: none;
     font-size: 20px;
@@ -42,9 +43,8 @@
     padding-right: 10%;
 }
 
-#logOut {
+#endSesh {
     color: black;
     text-decoration: none;
-    font-size: 20px;
-    padding-right: 10%;
+    margin-right: 10%;
 }
