@@ -28,8 +28,8 @@ export default class Item extends Component {
                 itemName: "",
                 storeType: "",
                 foodGroup: "",
-                quantity: null,
-                price: null,
+                quantity: "",
+                price: "",
                 description: "",
                 published: false
             },
@@ -205,6 +205,7 @@ export default class Item extends Component {
                                     id="itemName"
                                     value={currentItem.itemName}
                                     onChange={this.onChangeItemName}
+                                    maxLength="25"
                                     />
                                 </InputGroup>
 
@@ -215,12 +216,11 @@ export default class Item extends Component {
                                     as="select"
                                     value={this.state.storeType}
                                     onChange={this.onChangeStoreType}
-                                    as="select" 
-                                    defaultValue="Choose...">
-                                    <option>Choose...</option>
-                                    <option>Dry</option>
-                                    <option>Cold</option>
-                                    <option>Frozen</option>
+                                    defaultValue="choose...">
+                                    <option>choose...</option>
+                                    <option>dry</option>
+                                    <option>cold</option>
+                                    <option>frozen</option>
                                     </Form.Control>
                                 </Form.Group>
                         
@@ -231,13 +231,17 @@ export default class Item extends Component {
                                     value={this.state.foodGroup}
                                     onChange={this.onChangeFoodGroup}
                                     as="select" 
-                                    defaultValue="Choose...">
-                                    <option>Choose...</option>
-                                    <option>Vegetable</option>
-                                    <option>Fruit</option>
-                                    <option>Proteins</option>
-                                    <option>Dairy</option>
-                                    <option>Grains</option>
+                                    defaultValue="choose...">
+                                    <option>choose...</option>
+                                    <option>vegetable</option>
+                                    <option>fruit</option>
+                                    <option>grains</option>
+                                    <option>protein</option>
+                                    <option>dairy</option>
+                                    <option>spices</option>
+                                    <option>oil</option>
+                                    <option>condiments</option>
+                                    <option>other</option>
                                     </Form.Control>
                                 </Form.Group>
 
@@ -271,12 +275,13 @@ export default class Item extends Component {
                                     id="description"
                                     value={currentItem.description}
                                     onChange={this.onChangeDescription}
+                                    maxLength="25"
                                     />
                                 </InputGroup>
 
                                 <InputGroup className="inputGroup mb-3">
                                     <label id="FoLabel" htmlFor="status">Status: </label>
-                                    {currentItem.published ? " Saved to List 👍 " : " Not Saved 👎"}
+                                    {currentItem.published ? " Published to List 👍 " : " Not Published 👎"}
                                 </InputGroup>
 
                             </Form>
@@ -284,11 +289,11 @@ export default class Item extends Component {
                             <div className="buttons">
                                 {currentItem.published ? (
                                     <Button id="upButton" onClick={() => this.updatePublished(false)}>
-                                    Remove
+                                        Un-publish
                                     </Button>
                                 ) : (
                                     <Button id="upButton" onClick={() => this.updatePublished(true)}>
-                                        Save
+                                        Publish
                                     </Button>
                                 )}
 
@@ -296,7 +301,7 @@ export default class Item extends Component {
                                     Update
                                 </Button>
 
-                                <Button id="upButton" variant="danger" onClick={this.deleteList}>
+                                <Button id="upButton" variant="danger" onClick={this.deleteItem}>
                                 <Link id="upButton" to={"/yourList"}>
                                     Delete
                                 </Link>
@@ -312,14 +317,14 @@ export default class Item extends Component {
 
                         </div>
                         ) : (
-                        <div id="oops">
-                            <p>Please go back to select an item...</p>
-                            <Button variant="primary">
-                            <Link id="upButton" to={"/yourList"}>
-                                Back
-                            </Link>
-                            </Button>
-                        </div>
+                    <div id="oops">
+                        <p>Please go back to select an item...</p>
+                        <Button variant="primary">
+                        <Link id="upButton" to={"/yourList"}>
+                            Back
+                        </Link>
+                        </Button>
+                    </div>
                 )}
 
             </div>

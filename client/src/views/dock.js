@@ -1,12 +1,13 @@
 import './dock.css';
 import React, { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
-import Button from 'react-bootstrap/Button'
 import axios from "axios";
 
 // components
 import NavBar from '../components/navbar';
 import Footer from '../components/footer';
+import DockList from '../components/dockList';
+
 
 
 const Dock = () => {
@@ -28,21 +29,30 @@ const Dock = () => {
           Quantity.push(parseInt(dataObj.quantity));
         }
       setChartData({
-      labels: [1, 2, 3, 4],
+      labels: [
+        1, 2, 3, 4, 5,
+        6, 7, 8, 9, 10,
+        11, 12, 13, 14, 15,
+        16, 17, 18, 19, 20,
+        21, 22, 23, 24, 25,
+        26, 27, 28, 29, 30,
+        31, 32, 33, 34, 35,
+        36, 37, 38, 39, 40,
+        41, 42, 43, 44, 45,
+        46, 47, 48, 49, 50
+      ],
       datasets: [
         {
           label: 'Spending',
           data: Price,
-          fill: false,
-          backgroundColor: 'black',
-          borderColor: '#85bb65',
+          backgroundColor: "rgba(123, 239, 178, .3)",
+          borderColor: 'rgba(123, 239, 178, 1)',
         },
         {
           label: 'List Items',
           data: Quantity,
-          fill: false,
-          backgroundColor: 'black',
-          borderColor: '#1529F0',
+          backgroundColor: "rgba(25, 181, 254, 0.3)",
+          borderColor: 'rgba(25, 181, 254, 1)',
         }
       ],
     });
@@ -67,17 +77,13 @@ const Dock = () => {
           <div>
             <h1 id="title">Overview</h1>
           </div>
-          <div className="chartButtons">
-          <Button id="button" variant="" href="#">Line</Button> 
-          <Button id="button" variant="" href="#">Pie</Button> 
-          <Button id="button" variant="" href="#">Bar</Button> 
-          </div>
 
           {/* main chart area */}
           <div className="chartMain">
+
             <Line data={chartData} options={{
               responsive: true,
-              title: {text: 'Monthly Summary', display: true},
+              title: {text: 'Average of 50', display: true},
               scales: {
 
                 yAxes: [
@@ -92,34 +98,40 @@ const Dock = () => {
 
               }
             }}/>
+
           </div>
           {/* end main chart area */}
 
           {/* breakdown section */}
           <div id="breakDown">
 
-            <div id="dry">
-              <h3>Dry</h3>
+            <h1 id="breakTitle">What am I looking at?</h1>
+
+            <div id="spending">
+              <h3>Spending</h3>
               <div>
-                A chart for dry
+                The <b>GREEN LINE</b> is there to make sure you now what
+                you have to spend before you head to the grocery store.
+                We know shopping can be expensive so we want to help you
+                take control over your spending oby showing you the average
+                of the last 50 items that were added to your list.
               </div>
             </div>
 
-            <div id="cold">
-              <h3>Cold</h3>
+            <div id="quantity">
+              <h3>List Items</h3>
               <div>
-              A chart for cold
-              </div>
-            </div>
-
-            <div id="frozen">
-              <h3>Frozen</h3>
-              <div>
-              A chart for frozen
+              Managing you grocery list can be a pain. The <b>BLUE LINE</b> represents
+              the average quantity of items of the last 50 items you added to your list.
+              We want to help you see how many of each item you purchase regularly after
+              a visit to the store.
               </div>
             </div>
 
           </div>
+
+          <DockList />
+
           {/* end breakdown section */}
 
         </div>

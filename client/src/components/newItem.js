@@ -23,8 +23,8 @@ export default class NewItem extends Component {
             itemName: "",
             storeType: "",
             foodGroup: "",
-            quantity: null,
-            price: null,
+            quantity: "",
+            price: "",
             description: "",
             published: false,
 
@@ -125,6 +125,7 @@ export default class NewItem extends Component {
                                 value={this.state.itemName}
                                 onChange={this.onChangeItemName}
                                 placeholder="Enter a name"
+                                maxLength="15"
                                 />
                             </Form.Group>
 
@@ -135,12 +136,11 @@ export default class NewItem extends Component {
                                 as="select"
                                 value={this.state.storeType}
                                 onChange={this.onChangeStoreType}
-                                as="select" 
-                                defaultValue="Choose...">
-                                <option>Choose...</option>
-                                <option>Dry</option>
-                                <option>Cold</option>
-                                <option>Frozen</option>
+                                defaultValue="choose...">
+                                <option>choose...</option>
+                                <option>dry</option>
+                                <option>cold</option>
+                                <option>frozen</option>
                                 </Form.Control>
                     
                                 <Form.Label>Food Group</Form.Label>
@@ -149,13 +149,17 @@ export default class NewItem extends Component {
                                 value={this.state.foodGroup}
                                 onChange={this.onChangeFoodGroup}
                                 as="select" 
-                                defaultValue="Choose...">
-                                <option>Choose...</option>
-                                <option>Vegetable</option>
-                                <option>Fruit</option>
-                                <option>Proteins</option>
-                                <option>Dairy</option>
-                                <option>Grains</option>
+                                defaultValue="choose...">
+                                <option>choose...</option>
+                                <option>vegetable</option>
+                                <option>fruit</option>
+                                <option>grains</option>
+                                <option>protein</option>
+                                <option>dairy</option>
+                                <option>spices</option>
+                                <option>oil</option>
+                                <option>condiments</option>
+                                <option>other</option>
                                 </Form.Control>
                             </Form.Group>
 
@@ -177,7 +181,7 @@ export default class NewItem extends Component {
                                 required
                                 value={this.state.price}
                                 onChange={this.onChangePrice}
-                                placeholder="Enter a dollar amount"
+                                placeholder="Enter a whole dollar amount"
                                 />
                             </Form.Group>
 
@@ -189,6 +193,7 @@ export default class NewItem extends Component {
                                 value={this.state.description}
                                 onChange={this.onChangeDescription}
                                 placeholder="Enter a description"
+                                maxLength="20"
                                 />
                             </Form.Group>
 

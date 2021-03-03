@@ -5,7 +5,7 @@ import React, { Component } from "react";
 import NavBar from '../components/navbar';
 import Footer from '../components/footer';
 import NewItem from '../components/newItem';
-import SearchItems from '../components/searchItems';
+import ViewItems from '../components/viewItems';
 
 
 const YourList = () => {
@@ -17,7 +17,7 @@ const YourList = () => {
         <div className="mainContent">
           <h1 id="mainTitle">Your Grocery List</h1>
           <NewItem />
-          <SearchItems />
+          <ViewItems />
         </div>
       <Footer />
     </div>

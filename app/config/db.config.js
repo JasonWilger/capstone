@@ -13,9 +13,3 @@ module.exports = {
     }
     
 };
-
-// HOST: "localhost",
-// USER: "postgres",
-// PASSWORD: "null",
-// DB: "the_pantry",
-// dialect: "postgres",

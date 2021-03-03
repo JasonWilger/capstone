@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
-.addViewBody {
+.addViewBodyDock {
     display: flex;
     justify-content: center;
     margin-top: 5%;
@@ -25,16 +25,25 @@
     width: 100%;
 }
 
+#listSectionTitle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+    font-family: 'Comfortaa', cursive;
+
+}
+
 #listTitle {
     font-family: 'Comfortaa', cursive;
 }
 
-#displayInfo {
+#displayInfoDock {
     display: flex;
     justify-content: center;
     margin-left: 10%;
     margin-right: 10%;
-    width: 75%;
+    width: 700px;
+    max-height: 300px;
     padding-bottom: 2%;
     border-radius: 5%;
     border-top: 3px solid #9FE2BF;
@@ -46,9 +55,4 @@
     0 22.3px 17.9px rgba(0, 0, 0, 0.072),
     0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
-}
-
-#editButton {
-    color: white;
-    text-decoration: none;
 }

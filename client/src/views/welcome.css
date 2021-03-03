@@ -73,6 +73,16 @@
     margin: 5%;
 }
 
+#startTitle {
+    display: flex;
+    justify-content: center;
+}
+
+#startButton {
+    display: flex;
+    justify-content: center;
+}
+
 .chartInfo {
     display: flex;
     align-items: center;
