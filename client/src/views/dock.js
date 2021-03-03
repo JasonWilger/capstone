@@ -20,7 +20,7 @@ const Dock = () => {
     let Price = [];
     let Quantity = [];
     axios
-      .get("http://localhost:9000/api/item")
+      .get("https://the--pantry.herokuapp.com/api/item")
       .then(res => {
         console.log(res);
         for (const dataObj of res.data) {
