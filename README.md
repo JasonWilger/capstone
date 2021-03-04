@@ -7,8 +7,6 @@ Feel free to take a look [here](https://the--pantry.herokuapp.com/) !
 
 ## Motivation
 The motive behind this project was to build a full-stack web application that could properly run create, read, update, and delete or C.R.U.D. operations along with utilizing dynamic frameworks and libraries.
-
-## Repository Contents:
   
 ## Features
 * One main feature of The Pantry is the list page. Users are able to add items to a running list and can update the list anytime.
