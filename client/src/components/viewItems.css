@@ -53,3 +53,10 @@
     color: white;
     text-decoration: none;
 }
+
+#clickViewV {
+    display: flex;
+    justify-content: center;
+    margin-top: 60%;
+    margin-left: 10%;
+}

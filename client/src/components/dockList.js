@@ -114,7 +114,7 @@ export default class DockList extends Component {
                                 </div>
                             </div>
                         ) : (
-                            <div>
+                            <div id="clickViewD">
                                 <br />
                                 <p>Click a list item to view the details!</p>
                             </div>

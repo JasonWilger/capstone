@@ -43,13 +43,13 @@ const Dock = () => {
       ],
       datasets: [
         {
-          label: 'Spending',
+          label: 'Price',
           data: Price,
           backgroundColor: "rgba(123, 239, 178, .3)",
           borderColor: 'rgba(123, 239, 178, 1)',
         },
         {
-          label: 'List Items',
+          label: 'Quantity',
           data: Quantity,
           backgroundColor: "rgba(25, 181, 254, 0.3)",
           borderColor: 'rgba(25, 181, 254, 1)',
@@ -108,21 +108,19 @@ const Dock = () => {
             <h1 id="breakTitle">What am I looking at?</h1>
 
             <div id="Spending">
-              <h3>Spending</h3>
+              <h3>Price</h3>
               <div>
-                The <b>GREEN LINE</b> is there to make sure you now what
-                you have to spend before you head to the grocery store.
-                We know shopping can be expensive so we want to help you
-                take control over your spending oby showing you the average
-                of the last 50 items that were added to your list.
+                The <b>GREEN LINE</b> is there to help you see the price of the items
+                you purchased. We want to help you see the trends in your spending along
+                with any high spikes in price.
               </div>
             </div>
 
             <div id="Quantity">
-              <h3>List Items</h3>
+              <h3>Quantity</h3>
               <div>
               Managing you grocery list can be a pain. The <b>BLUE LINE</b> represents
-              the average quantity of items of the last 50 items you added to your list.
+              the quantity of the items you added to your list.
               We want to help you see how many of each item you purchase regularly after
               a visit to the store.
               </div>

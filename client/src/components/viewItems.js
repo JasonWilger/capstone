@@ -152,7 +152,7 @@ export default class ViewItems extends Component {
                             </Button>
                         </div>
                     ) : (
-                        <div>
+                        <div id="clickViewV">
                             <br />
                             <p>Click a list item to view the details!</p>
                         </div>

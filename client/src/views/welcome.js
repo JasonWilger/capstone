@@ -3,10 +3,10 @@ import { Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import chartImg from '../img/line-ex.png';
+import chartImg from '../img/responsive.png';
 
 
-const Welcome = (props) => {
+const Welcome = () => {
 
 
   return (
@@ -32,7 +32,7 @@ const Welcome = (props) => {
 
         <div className="split">
         <div className="appDisc">
-        <h2>The door you can open from anywhere.</h2>
+        <h2>We help you find what you couldn't before.</h2>
           <p>
           Did your last grocery trip cost you more than normal?
           Maybe you went to a new store or bought some items you didn't need.
@@ -47,7 +47,7 @@ const Welcome = (props) => {
         <Card id="startCard" style={{ width: '18rem' }}>
           <Card.Body>
             <Card.Title id="startTitle">Lets Get Started!</Card.Title>
-            <Link to="/dock">
+            <Link to="/yourList">
               <Button variant="" id="startButton">
                 Start
               </Button>
@@ -60,8 +60,10 @@ const Welcome = (props) => {
         </div>
 
         <div className="chartInfo">
-          <h2>We help you find the problem.</h2>
+          <h2>We help you see the problem.</h2>
           <img src={chartImg} alt="chart image"/>
+          <p>By using a dynamic chart library we are able to help you see
+            your list like you haven't before.</p>
         </div>
 
           <div className="footer">

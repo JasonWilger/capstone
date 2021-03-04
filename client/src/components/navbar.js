@@ -20,53 +20,49 @@ function MyVerticallyCenteredModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h3>some text</h3>
-          <h4>hgfdhf</h4>
+          <h4>Step 1:</h4>
           <ul>
             <ls>
-              Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-              dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-              consectetur ac, vestibulum at eros.
+              Take the receipt from your last trip to the store and
+              input each item you bought along with the price rounded
+              to the nearest whole number.
             </ls>
           </ul>
-          <h4>hgfdhf</h4>
+          <h4>Step 2:</h4>
           <ul>
             <ls>
-              Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-              dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-              consectetur ac, vestibulum at eros.
+              Review the list you just entered to make sure all
+              items are there. If you made a mistake, you can update your list item by clicking on 
+              the item name and selecting the edit button.
             </ls>
           </ul>
-          <h4>hgfdhf</h4>
+          <h4>Step 3:</h4>
           <ul>
             <ls>
-              Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-              dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-              consectetur ac, vestibulum at eros.
+              Now you are ready to take a look at your results.
+              Click on the dock tab and start reviewing the chart.
+              (if you need to look at your list again,
+              scroll to the bottom of the page to see your updated list)
             </ls>
           </ul>
-          <h4>hgfdhf</h4>
+          <h4>Step 4:</h4>
           <ul>
             <ls>
-              Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-              dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-              consectetur ac, vestibulum at eros.
+              As you review the chart, make sure to hover over the points
+              on the graph to see your item data.
             </ls>
           </ul>
-          <h4>hgfdhf</h4>
+          <h4>Step 5:</h4>
           <ul>
             <ls>
-              Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-              dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-              consectetur ac, vestibulum at eros.
+              By now you should be able to see the average quantity of items
+              you purchased and the average dollar amount spent.
             </ls>
           </ul>
-          <h4>hgfdhf</h4>
+          <h4>Step 6:</h4>
           <ul>
             <ls>
-              Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-              dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-              consectetur ac, vestibulum at eros.
+              Take notes of your results and save them for your next trip to the store!
             </ls>
           </ul>
 
@@ -110,11 +106,8 @@ const NavBar = () => {
             />
           {/* end modal */}
           
-          <Link id="dock" to="/dock">Dock</Link>
           <Link id="yourList" to="/yourList">List</Link>
-          <Button id="endSesh" variant="danger" href="/">
-            End 
-          </Button>
+          <Link id="dock" to="/dock">Dock</Link>
 
         </Nav>
       </Navbar.Collapse>

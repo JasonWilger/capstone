@@ -54,6 +54,7 @@
     background-color: white;
     border-left: 1px solid #9FE2BF;
     border-right: 1px solid #9FE2BF;
+    font-family: 'Comfortaa', cursive;
 }
 
 #appDisc, h2 {
@@ -78,8 +79,8 @@
     outline: none;
     box-shadow: none !important;
     -webkit-appearance: none;
-    margin-left: 22%;
-    margin-top: 10%;
+    margin-left: 21%;
+    margin-top: 23%;
     padding: 20%;
     border: 1px solid #9FE2BF;
     font-family: 'Comfortaa', cursive;
@@ -102,7 +103,11 @@
     justify-content: center;
     width: 60vw;
     padding-bottom: 5%;
+}
 
+#chartInfo, p {
+    font-family: 'Comfortaa', cursive;
+    padding-bottom: 5%;
 }
 
 .footer {

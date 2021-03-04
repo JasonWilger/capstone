@@ -289,7 +289,7 @@ export default class Item extends Component {
                             <div className="buttons">
                                 {currentItem.published ? (
                                     <Button id="upButton" onClick={() => this.updatePublished(false)}>
-                                        Un-publish
+                                        Remove
                                     </Button>
                                 ) : (
                                     <Button id="upButton" onClick={() => this.updatePublished(true)}>
