@@ -6,7 +6,7 @@ The Pantry was designed to help you see what you didn't before. With an interact
 Feel free to take a look [here](https://the--pantry.herokuapp.com/) !
 
 ## Motivation
-> The motive behind this project was to build a full-stack web application that could properly run create, read, update, and delete or C.R.U.D. operations along with utilizing dynamic frameworks and libraries.
+The motive behind this project was to build a full-stack web application that could properly run create, read, update, and delete or C.R.U.D. operations along with utilizing dynamic frameworks and libraries.
 
 ## Repository Contents:
   
